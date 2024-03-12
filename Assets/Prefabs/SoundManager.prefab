@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5625328062708773294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2438811724741718105}
+  - component: {fileID: 440615050969261847}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2438811724741718105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625328062708773294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.381668, y: 7.1015415, z: 18.897705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &440615050969261847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625328062708773294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deab45ce6a647984bb427a4d9d3bafdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: slash
+    clip: {fileID: 8300000, guid: 84309f0e660b98d4bba0784443f60301, type: 3}
+    volumn: 0.586
+    pitch: 0.722
+    randomVolumn: 0.112
+    randomPitch: 0.074
+    loop: 0
+    isMusic: 0
+  - name: run
+    clip: {fileID: 8300000, guid: 03d53fc005b591b48a2d46bc9a8de324, type: 3}
+    volumn: 0.638
+    pitch: 0
+    randomVolumn: 0
+    randomPitch: 0
+    loop: 0
+    isMusic: 0
+  - name: explosion
+    clip: {fileID: 8300000, guid: 6771afc1d83da7b498efde21262cde8b, type: 3}
+    volumn: 0.553
+    pitch: 0
+    randomVolumn: 0
+    randomPitch: 0
+    loop: 0
+    isMusic: 0
+  - name: dimensioncutter
+    clip: {fileID: 8300000, guid: c0a3a9e26876af6488644d1f88afc9c3, type: 3}
+    volumn: 0.599
+    pitch: 0
+    randomVolumn: 0
+    randomPitch: 0
+    loop: 0
+    isMusic: 0
+  - name: flameburst
+    clip: {fileID: 8300000, guid: c7c4c3f8b628995429daf5e473c73d59, type: 3}
+    volumn: 0
+    pitch: 0
+    randomVolumn: 0
+    randomPitch: 0
+    loop: 0
+    isMusic: 0
+  - name: riskbgm
+    clip: {fileID: 8300000, guid: cfd3fd0c4168029499da4a115b9019b5, type: 3}
+    volumn: 0.882
+    pitch: 0.855
+    randomVolumn: 0.132
+    randomPitch: 0.072
+    loop: 1
+    isMusic: 1
+  _musicMixer: {fileID: 24100000, guid: 6911032be15419b4bbcaf456cfb30fa7, type: 2}
+  _sfxMixer: {fileID: 24100000, guid: 9e245f00cfa0fb543949d6991a09134a, type: 2}

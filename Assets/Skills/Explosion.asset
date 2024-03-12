@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd944f3a7586e524893d0a3b44495c5a, type: 3}
+  m_Name: Explosion
+  m_EditorClassIdentifier: 
+  skillName: Explosion
+  indicatorPrefab: {fileID: 4488026288949910335, guid: 5b14559e9a8239d4ca5e43e4ec3f8417,
+    type: 3}
+  skillVFX: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
+  icon: {fileID: 21300000, guid: f4ff402319a68fb41bc2e4b67c6b9bef, type: 3}
+  cooldown: 1
+  range: 5
+  damage: 75
+  description: 
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000}
+        m_TargetAssemblyTypeName: TargetRangeSkill, Assembly-CSharp
+        m_MethodName: SkillEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  typeOfSkill: 1

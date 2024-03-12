@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8581418323907478712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 25150780-d574-46ed-a950-ef23b06c6cac
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "T\xF4i \u0111ang \u1EDF \u0111\xE2u?"
+  children:
+  - 501af39f-715f-410b-80b5-eac774178650
+  rect:
+    serializedVersion: 2
+    x: 269
+    y: 213
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-7716061750442552090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 2772658e-5e1d-42ae-b91d-033fe4c00598
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "K\u1EBB n\xE0o l\u1EA1i d\xE1m l\xE0m nh\u01B0 v\u1EADy?"
+  children:
+  - 4720b27b-cfe5-4e47-8564-9f6b4a16efa6
+  rect:
+    serializedVersion: 2
+    x: 1253
+    y: 56
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-2273432069593505851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: c39470b8-b4ab-41f9-b41f-8795e8508c34
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "C\xE1c anh \u0111\xE3 chu\u1EA9n bi g\xEC ch\u01B0a?"
+  children:
+  - 4720b27b-cfe5-4e47-8564-9f6b4a16efa6
+  rect:
+    serializedVersion: 2
+    x: 1253
+    y: 177
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95968f1e506f8d340839f768b3f3c32b, type: 3}
+  m_Name: NPC02
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 4590686177952371151}
+  - {fileID: -8581418323907478712}
+  - {fileID: 8945701310693020423}
+  - {fileID: 785114789534698911}
+  - {fileID: 7867642229311746516}
+  - {fileID: -7716061750442552090}
+  - {fileID: -2273432069593505851}
+  - {fileID: 5106796023428372030}
+--- !u!114 &785114789534698911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 2d850347-81e6-4ae2-92bf-817816d6e196
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Ng\xF4i l\xE0ng s\u1EAFp b\u1ECB t\u1EA5n c\xF4ng."
+  children:
+  - 2772658e-5e1d-42ae-b91d-033fe4c00598
+  - c39470b8-b4ab-41f9-b41f-8795e8508c34
+  rect:
+    serializedVersion: 2
+    x: 999
+    y: 102
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &4590686177952371151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 1a41f3f2-793a-45eb-866f-79ab858248f8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "T\xF4i c\xF3 th\u1EC3 gi\xFAp g\xEC cho c\u1EADu?"
+  children:
+  - 25150780-d574-46ed-a950-ef23b06c6cac
+  - 60e2cd46-e54f-45c3-a9cc-02ab79b449ec
+  rect:
+    serializedVersion: 2
+    x: 8
+    y: 107
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5106796023428372030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 4720b27b-cfe5-4e47-8564-9f6b4a16efa6
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Ch\xFAng s\u1EAFp \u0111\u1EBFn r\u1ED3i k\xECa ..."
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1580
+    y: 97
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: EnemyAppear
+--- !u!114 &7867642229311746516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 501af39f-715f-410b-80b5-eac774178650
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "M\u1ED9t ng\xF4i l\xE0ng nh\u1ECF tr\xEAn n\xFAi tuy\u1EBFt."
+  children:
+  - 60e2cd46-e54f-45c3-a9cc-02ab79b449ec
+  rect:
+    serializedVersion: 2
+    x: 495
+    y: 212
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &8945701310693020423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 60e2cd46-e54f-45c3-a9cc-02ab79b449ec
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "Anh c\xF3 chuy\u1EC7n g\xEC v\u1EADy?"
+  children:
+  - 2d850347-81e6-4ae2-92bf-817816d6e196
+  rect:
+    serializedVersion: 2
+    x: 749
+    y: 85
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

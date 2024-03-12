@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44d8e7983258a34dbef20c1d055aa45, type: 3}
+  m_Name: GroundScatter
+  m_EditorClassIdentifier: 
+  skillName: Ground Scatter
+  indicatorPrefab: {fileID: 1372688831912684717, guid: 9757de272cc39854596ce6a6bc869992,
+    type: 3}
+  skillVFX: {fileID: 3712707503665828137, guid: 519ff72a211faaf43b8be89b3169a13d,
+    type: 3}
+  icon: {fileID: 21300000, guid: 3df0348396ed4544d87ee9591ecc51ca, type: 3}
+  cooldown: 20
+  range: 4
+  damage: 75
+  description: 
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000}
+        m_TargetAssemblyTypeName: RPG.Skills.RoundSkill, Assembly-CSharp
+        m_MethodName: SkillEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  typeOfSkill: 2
