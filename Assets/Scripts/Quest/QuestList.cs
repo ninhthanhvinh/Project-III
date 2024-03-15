@@ -1,3 +1,4 @@
+using RPG.Inventories;
 using RPG.Saving;
 using System;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace RPG.Quests
 {
-    public class QuestList : MonoBehaviour, ISaveable
+    public class QuestList : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
         List<QuestStatus> statuses = new List<QuestStatus>();
 
@@ -23,8 +24,24 @@ namespace RPG.Quests
         {
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objective);
+            if (status.IsComplete())
+            {
+                GiveRewards(quest);
+            }
             onUpdate?.Invoke();
             return true;
+        }
+
+        private void GiveRewards(Quest quest)
+        {
+            foreach (Quest.Reward reward in quest.GetRewards())
+            {
+                bool success = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                if (!success)
+                {
+                    GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                }
+            }
         }
 
         public bool HasQuest(Quest quest)
@@ -63,6 +80,12 @@ namespace RPG.Quests
         public void RestoreState(object state)
         {
             
+        }
+
+        public bool? Evaluate(string predicate, string[] parameters)
+        {
+            if (predicate == "HasQuest") return null;
+            return HasQuest(Quest.GetByName(parameters[0]));
         }
     }
 

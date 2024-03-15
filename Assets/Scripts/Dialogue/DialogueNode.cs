@@ -17,6 +17,7 @@ namespace Dialogue
         [SerializeField]
         Rect rect = new Rect(0, 0, 200, 100);
 
+        [SerializeField] private Condition condition;
 
         [SerializeField]
         string onEnterAction;
@@ -51,7 +52,10 @@ namespace Dialogue
             return isPlayerSpeaking;
         }
 
-
+        public bool CheckCondition(IEnumerable<IPredicateEvaluator> evaluators)
+        {
+            return condition.Check(evaluators);
+        }   
 #if UNITY_EDITOR
         public void SetPosition(Vector2 newPosition)
         {
