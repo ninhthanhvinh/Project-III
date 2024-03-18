@@ -7,6 +7,7 @@ using BehaviorDesigner.Runtime.Tactical;
 using BehaviorDesigner.Runtime;
 using Control;
 using RPG.Enemy;
+using UnityEngine.Events;
 
 namespace RPG.Attributes
 {
@@ -16,9 +17,12 @@ namespace RPG.Attributes
         LazyValue<float> healthPoints;
         bool isDead = false;
 
+        public UnityEvent OnDead;
+
         private void Awake()
         {
             healthPoints = new LazyValue<float>(GetInitialHealth);
+            OnDead.AddListener(Die);
         }
 
         private float GetInitialHealth()
@@ -52,7 +56,7 @@ namespace RPG.Attributes
             {
                 AwardExperience(dmgDealer);
                 FindObjectOfType<LevelManager>().GetComponent<LevelManager>().OnEnemyDeath(gameObject.GetComponent<Enemies>());            
-                Die();
+                OnDead.Invoke();
             }
         }
         private void Die()
@@ -110,7 +114,7 @@ namespace RPG.Attributes
             healthPoints.value = (float)state;
             if (healthPoints.value == 0)
             {
-                Die();
+                OnDead.Invoke();
             }
         }
 

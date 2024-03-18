@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Quest 1
   m_EditorClassIdentifier: 
   objectives:
-  - Do something
+  - reference: Go to destination
+    description: Go to nearest house
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: 6621bbf338ee93542904400fb8ebde5a, type: 2}

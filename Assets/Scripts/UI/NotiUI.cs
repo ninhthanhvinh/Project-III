@@ -18,9 +18,8 @@ public class NotiUI : MonoBehaviour
         notiText.text = message;
     }
 
-    private IEnumerator Deactive()
+    private void Deactive()
     {
-        yield return new WaitForSeconds(5f);
         gameObject.SetActive(false);
     }
 }

@@ -28442,7 +28442,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Find the mayor at the house at the easthest.
+          m_StringArgument: Find the mayor at the house at the nearest house.
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 8490003405128386442}
@@ -33296,7 +33296,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1000013846435076, guid: 976334b832997084984a450972d36956,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1540363889}
+    - targetCorrespondingSourceObject: {fileID: 1000013846435076, guid: 976334b832997084984a450972d36956,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1540363893}
   m_SourcePrefab: {fileID: 100100000, guid: 976334b832997084984a450972d36956, type: 3}
 --- !u!1 &1227655274
 GameObject:
@@ -43714,6 +43722,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 854418678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1513269220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013846435076, guid: 976334b832997084984a450972d36956,
+    type: 3}
+  m_PrefabInstance: {fileID: 1226975301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1515024092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44714,6 +44728,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1226975301}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540363889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513269220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7701fbca8531524eac2732544aa743e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: a52f6ebb02edb584d900e58f0f77af74, type: 2}
+  objective: Go to destination
+--- !u!135 &1540363893
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513269220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 9.221966
+  m_Center: {x: -0.000000029292039, y: 3.9432907, z: 2.7610016}
 --- !u!1001 &1540422512
 PrefabInstance:
   m_ObjectHideFlags: 0
