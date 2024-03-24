@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Enemy
+namespace RPG.Statemachine
 {
     public class StateMachine
     {
         public IState[] states;
-        public Enemy enemy;
+        public NonPlayableCharacter agent;
         public StateID currentState;
 
-        public StateMachine(Enemy enemy)
+        public StateMachine(NonPlayableCharacter agent)
         {
-            this.enemy = enemy;
+            this.agent = agent;
             int numStates = System.Enum.GetNames(typeof(StateID)).Length;
             states = new IState[numStates];
         }
@@ -30,20 +30,22 @@ namespace RPG.Enemy
         }
         public void Update()
         {
-            GetState(currentState)?.Update(enemy);
+            GetState(currentState)?.Update(agent);
+            Debug.Log(currentState);
         }
 
         public void ChangeState(StateID newState)
         {
-            GetState(currentState)?.Exit(enemy);
+            GetState(currentState)?.Exit(agent);
             currentState = newState;
-            GetState(currentState)?.Enter(enemy);
+            GetState(currentState)?.Enter(agent);
         }
     }
 
 
     public enum StateID
     {
+        Idle,
         Patrol,
         Chase,
         Attack,
@@ -53,9 +55,9 @@ namespace RPG.Enemy
     public interface IState
     {
         StateID GetId();
-        void Enter(Enemy enemy);
-        void Update(Enemy enemy);
-        void Exit(Enemy enemy);
+        void Enter(NonPlayableCharacter agent);
+        void Update(NonPlayableCharacter agent);
+        void Exit(NonPlayableCharacter agent);
 
     }
 }
