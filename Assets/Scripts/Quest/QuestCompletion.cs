@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Quests
 {
@@ -9,6 +10,7 @@ namespace RPG.Quests
         [SerializeField] Quest quest;
         [SerializeField] string objective;
         [SerializeField]private GameObject notiUI;
+        public UnityEvent OnComplete;
 
         public void CompleteObjective()
         {
@@ -16,7 +18,7 @@ namespace RPG.Quests
             questList.CompleteObjective(quest, objective);
             notiUI.SetActive(true);
             notiUI.GetComponent<NotiUI>().ShowNoti("Objective Completed!");
-
+            OnComplete.Invoke();
         }
     }
 } 

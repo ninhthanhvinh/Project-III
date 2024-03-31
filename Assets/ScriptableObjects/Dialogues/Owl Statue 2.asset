@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6468110430732950935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 3bcd7b63-7526-443b-aeda-af86de27d95e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You can find one in the castle border.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 500
+    y: -1
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: final
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95968f1e506f8d340839f768b3f3c32b, type: 3}
+  m_Name: Owl Statue 2
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 5590672340663383431}
+  - {fileID: 2919083354001730043}
+  - {fileID: -6468110430732950935}
+--- !u!114 &2919083354001730043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: b339c6bc-9b36-40ea-b014-fa42247ba59f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: That's why there are so many.
+  children:
+  - 3bcd7b63-7526-443b-aeda-af86de27d95e
+  rect:
+    serializedVersion: 2
+    x: 250
+    y: 0
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5590672340663383431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 16949f10-26de-4117-8a3f-d7d2df1f8be7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Welldone. Some evil entities will apear soon.
+  children:
+  - b339c6bc-9b36-40ea-b014-fa42247ba59f
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: -2
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 

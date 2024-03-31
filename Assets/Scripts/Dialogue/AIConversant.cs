@@ -41,6 +41,11 @@ namespace Dialogue
         {
             player.GetComponent<PlayerConversant>().StartDialogue(this, dialogue);
         }
+
+        public void ChangeDialogue(Dialogue dialogue)
+        {
+            this.dialogue = dialogue;
+        }
     }
 }
 
