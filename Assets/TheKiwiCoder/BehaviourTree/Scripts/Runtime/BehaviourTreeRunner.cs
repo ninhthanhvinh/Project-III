@@ -20,7 +20,6 @@ namespace TheKiwiCoder {
 
         // Update is called once per frame
         void Update() {
-            Debug.Log(tree);
             if (tree) {
                 tree.Update();
             }

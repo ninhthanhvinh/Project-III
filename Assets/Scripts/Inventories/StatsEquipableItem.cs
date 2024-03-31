@@ -13,13 +13,6 @@ namespace RPG.Inventories
         [SerializeField]
         Modifier[] percentageModifiers;
 
-        [System.Serializable]
-        struct Modifier
-        {
-            public Stat stat;
-            public float value;
-        }
-
         public IEnumerable<float> GetAdditiveModifiers(Stat stat)
         {
             foreach (var modifier in additiveModifiers)
@@ -41,5 +34,17 @@ namespace RPG.Inventories
                 }
             }
         }
+    }
+}
+
+[System.Serializable]
+struct Modifier
+{
+    public Stat stat;
+    public float value;
+
+    public void AddValue(float value)
+    {
+        this.value += value;
     }
 }

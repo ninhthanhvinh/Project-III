@@ -27,7 +27,6 @@ namespace TheKiwiCoder {
             }
 
             state = OnUpdate();
-
             if (state != State.Running) {
                 OnStop();
                 started = false;

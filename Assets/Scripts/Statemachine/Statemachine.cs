@@ -31,7 +31,6 @@ namespace RPG.Statemachine
         public void Update()
         {
             GetState(currentState)?.Update(agent);
-            Debug.Log(currentState);
         }
 
         public void ChangeState(StateID newState)

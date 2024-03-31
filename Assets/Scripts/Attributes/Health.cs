@@ -15,13 +15,17 @@ namespace RPG.Attributes
     {
         [SerializeField] float regenHealthPercentWhileLvlUp = 0f;
         LazyValue<float> healthPoints;
+        LazyValue<float> defense;
         bool isDead = false;
+
+        const float DEFENCE_AFFECT_ON_DAMAGE = 0.25f;
 
         public UnityEvent OnDead;
 
         private void Awake()
         {
             healthPoints = new LazyValue<float>(GetInitialHealth);
+            defense = new LazyValue<float>(GetInitialDefense);
             OnDead.AddListener(Die);
         }
 
@@ -30,9 +34,15 @@ namespace RPG.Attributes
             return GetComponent<BaseStats>().GetStats(Stat.Health);
         }
 
+        private float GetInitialDefense()
+        {
+            return GetComponent<BaseStats>().GetStats(Stat.Defense);
+        }
+
         private void Start()
         {
             healthPoints.ForceInit();
+            defense.ForceInit();
         }
 
         private void OnEnable()
@@ -51,9 +61,13 @@ namespace RPG.Attributes
         }
         public void TakeDamage(GameObject dmgDealer, float damage)
         {
-            healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
+            healthPoints.value = Mathf.Max(healthPoints.value + defense.value * DEFENCE_AFFECT_ON_DAMAGE - damage, 0);
             if (healthPoints.value <= 0)
             {
+                if (dmgDealer == null)
+                {
+                    return;
+                }
                 AwardExperience(dmgDealer);
                 FindObjectOfType<LevelManager>().GetComponent<LevelManager>().OnEnemyDeath(gameObject.GetComponent<Enemies>());            
                 OnDead.Invoke();
@@ -102,6 +116,11 @@ namespace RPG.Attributes
             float regenHP = GetComponent<BaseStats>().GetStats(Stat.Health) * regenHealthPercentWhileLvlUp / 100;
             healthPoints.value = Mathf.Max(healthPoints.value + regenHP, healthPoints.value);
             healthPoints.value = Mathf.Min(healthPoints.value, GetComponent<BaseStats>().GetStats(Stat.Health));
+        }
+
+        public void Heal(float healthToRestore)
+        {
+            healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetComponent<BaseStats>().GetStats(Stat.Health));
         }
 
         public object CaptureState()

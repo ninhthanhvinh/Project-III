@@ -1,4 +1,5 @@
 using RPG.Saving;
+using RPG.Stats;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +48,8 @@ public class PlayerMovement : MonoBehaviour, ISaveable
             SoundManager.instance.PlaySound("run", transform);
 
             Vector3 moveDir = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+
+            MoveSpeed = GetComponent<BaseStats>().GetStats(Stat.Speed);
 
             transform.position += moveDir * MoveSpeed * Time.deltaTime;
         }

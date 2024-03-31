@@ -17,6 +17,8 @@ namespace RPG.Stats
     public enum Stat
     {
         Health,
+        Speed,
+        Defense,
         ExperienceReward,
         ExperienceToLevelUp,
         Damage,

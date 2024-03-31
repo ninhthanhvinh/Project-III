@@ -1,7 +1,9 @@
 using Control;
 using UnityEngine;
 using UnityEngine.Events;
+using RPG.Enemy;
 using UnityEngine.UI;
+using System.Collections;
 namespace RPG.Skills
 {
     
@@ -25,6 +27,14 @@ namespace RPG.Skills
         protected void PlayAnimation(PlayerController playerController)
         {
             playerController.PlayAnim(typeOfSkill);
+        }
+
+        public virtual void AIUse(SkilledEnemy enemy, Vector3 target) {  }
+
+        public IEnumerator Indicator()
+        {
+
+            yield return new WaitForSeconds(1f);   
         }
     }
 }

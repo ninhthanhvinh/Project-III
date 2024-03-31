@@ -1,4 +1,5 @@
 using Control;
+using RPG.Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,18 @@ namespace RPG.Skills
             {
                 effect.Apply(playerController.gameObject, this);
             }
+        }
+
+        public override void AIUse(SkilledEnemy enemy, Vector3 target)
+        {
+            Transform vfx = Instantiate(skillVFX, target, Quaternion.identity).transform;
+
+            SkillEffect[] effects = vfx.GetComponentsInChildren<SkillEffect>();
+            foreach (SkillEffect effect in effects)
+            {
+                effect.Apply(enemy.gameObject, this);
+            }
+
         }
     }
 }

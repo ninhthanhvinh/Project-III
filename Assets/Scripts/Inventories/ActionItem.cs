@@ -1,4 +1,6 @@
+using RPG.Skills;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Inventories
@@ -17,6 +19,8 @@ namespace RPG.Inventories
         [Tooltip("Does an instance of this item get consumed every time it's used.")]
         [SerializeField] bool consumable = false;
 
+        [SerializeField] private List<Effect> effects;
+
         // PUBLIC
 
         /// <summary>
@@ -26,6 +30,10 @@ namespace RPG.Inventories
         public virtual void Use(GameObject user)
         {
             Debug.Log("Using action: " + this);
+            foreach (Effect effect in effects)
+            {
+                effect.ExecuteEffect(user);
+            }
         }
 
         public bool isConsumable()

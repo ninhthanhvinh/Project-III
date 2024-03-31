@@ -1,4 +1,5 @@
 using Control;
+using RPG.Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,7 +20,7 @@ namespace RPG.Skills
             user.CanAttack = false;
             GameObject indicator = Instantiate(this.indicatorPrefab, user.transform.position + new Vector3(0, 2f, 0), Quaternion.identity, user.transform);
             ArrowIndicatorUI arrowIndicatorUI = indicator.GetComponent<ArrowIndicatorUI>();
-            user.StartCoroutine(arrowIndicatorUI.SetArrowDirection(user, OnFinish));
+            user.StartCoroutine(arrowIndicatorUI.FindingArea(user, this));
         }
 
         public void SkillEffect(PlayerController playerController, Vector3 vector3)
@@ -35,6 +36,19 @@ namespace RPG.Skills
             foreach (SkillEffect effect in effects)
             {
                 effect.Apply(playerController.gameObject, this);
+            }
+
+        }
+
+        public override void AIUse(SkilledEnemy enemy, Vector3 target)
+        {
+            Transform vfx = Instantiate(skillVFX, target, Quaternion.identity).transform;
+            vfx.rotation = Quaternion.LookRotation(target);
+
+            SkillEffect[] effects = vfx.GetComponentsInChildren<SkillEffect>();
+            foreach (SkillEffect effect in effects)
+            {
+                effect.Apply(enemy.gameObject, this);
             }
 
         }

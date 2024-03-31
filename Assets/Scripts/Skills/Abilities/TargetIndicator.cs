@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class TargetIndicator : MonoBehaviour
+public class TargetIndicator : Indicator
 {
     [SerializeField]
     private Canvas rangeCanvas;
@@ -25,7 +25,7 @@ public class TargetIndicator : MonoBehaviour
         
     }
 
-    public IEnumerator FindingArea(PlayerController player, Skill skill)
+    public override IEnumerator FindingArea(PlayerController player, Skill skill)
     {
         targetCanvas.GetComponent<RectTransform>().localScale = Vector3.one * skill.range;
         skill.OnFinish.AddListener(EndTargeting);

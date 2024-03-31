@@ -21,6 +21,7 @@ namespace TheKiwiCoder {
         {
             if (enemy.CanAttack())
             {
+                Debug.Log("Attacking");
                 enemy.Attack(context.targetPosition);
                 return State.Success;
             }

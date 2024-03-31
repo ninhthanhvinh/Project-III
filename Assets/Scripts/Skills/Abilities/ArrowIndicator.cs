@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace RPG.Skills
 {
-    public class ArrowIndicatorUI : MonoBehaviour
+    public class ArrowIndicatorUI : Indicator
     {
         RaycastHit hit;
         Ray ray;
@@ -37,9 +37,9 @@ namespace RPG.Skills
         }
 
 
-        public IEnumerator SetArrowDirection(PlayerController player, UnityEvent<PlayerController, Vector3> finish)
+        public override IEnumerator FindingArea(PlayerController player, Skill skill)
         {
-            finish.AddListener(EndTargeting);
+            skill.OnFinish.AddListener(EndTargeting);
             while (true)
             {
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
@@ -51,8 +51,7 @@ namespace RPG.Skills
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        Debug.Log(finish.GetPersistentEventCount());
-                        finish.Invoke(player, direction);
+                        skill.OnFinish.Invoke(player, direction);
                         break;
                     }
                 }

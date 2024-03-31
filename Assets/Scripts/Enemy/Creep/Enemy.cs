@@ -10,7 +10,7 @@ namespace RPG.Enemy
 {
     public class Enemy : Enemies, IAttackAgent
     {
-        Animator animator;
+        protected Animator animator;
 
         [SerializeField] private float attackDistance;
         [SerializeField] private float repeatAttackDelay;
@@ -72,6 +72,11 @@ namespace RPG.Enemy
             {
                 other.GetComponent<Attributes.Health>().TakeDamage(gameObject, damage);
             }
+        }
+
+        public void PlayAnimation(string name)
+        {
+            animator.Play(name);
         }
     }
 }

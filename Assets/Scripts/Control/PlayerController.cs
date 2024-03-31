@@ -19,6 +19,7 @@ namespace Control
         Slide slide;
         float dmg;
 
+
         private bool canAttack = true;
         public bool CanAttack { get => canAttack; set => canAttack = value; }
 
