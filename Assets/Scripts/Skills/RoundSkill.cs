@@ -32,8 +32,8 @@ namespace RPG.Skills
 
         public override void AIUse(SkilledEnemy enemy, Vector3 target)
         {
+            target = enemy.transform.position;
             Transform vfx = Instantiate(skillVFX, target, Quaternion.identity).transform;
-
             SkillEffect[] effects = vfx.GetComponentsInChildren<SkillEffect>();
             foreach (SkillEffect effect in effects)
             {

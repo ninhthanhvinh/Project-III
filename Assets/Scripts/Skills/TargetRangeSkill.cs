@@ -9,6 +9,7 @@ using UnityEngine;
 [CreateAssetMenu (menuName = "Skills/TargetRangeSkill")]
 public class TargetRangeSkill : Skill
 {
+    [SerializeField] Vector3 offsetInstantiate;
     private void Awake()
     {
         OnFinish.AddListener(SkillEffect);
@@ -17,7 +18,7 @@ public class TargetRangeSkill : Skill
     public override void Use(PlayerController user)
     {
         user.CanAttack = false;
-        GameObject indicator = Instantiate(this.indicatorPrefab, user.transform.position + new Vector3(0, .5f, 0), Quaternion.identity, user.transform);
+        GameObject indicator = Instantiate(this.indicatorPrefab, user.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity, user.transform);
         TargetIndicator targetIndicator = indicator.GetComponent<TargetIndicator>();
         user.StartCoroutine(targetIndicator.FindingArea(user, this));
     }
@@ -25,8 +26,8 @@ public class TargetRangeSkill : Skill
     public void SkillEffect(PlayerController playerController, Vector3 vector3)
     {
         PlayAnimation(playerController);
-        Transform vfx = Instantiate(skillVFX, playerController.transform.position + new Vector3(0, 1f, 0), Quaternion.identity).transform;
-        vfx.position = vector3;
+        Transform vfx = Instantiate(skillVFX, playerController.transform.position + new Vector3(0, 1f, 0), skillVFX.transform.rotation).transform;
+        vfx.position = vector3 + offsetInstantiate;
         SkillEffect[] effects = vfx.GetComponentsInChildren<SkillEffect>();
 
         foreach (SkillEffect effect in effects)

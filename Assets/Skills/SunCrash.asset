@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd944f3a7586e524893d0a3b44495c5a, type: 3}
+  m_Name: SunCrash
+  m_EditorClassIdentifier: 
+  skillName: Sun Crash
+  indicatorPrefab: {fileID: 4488026288949910335, guid: 5b14559e9a8239d4ca5e43e4ec3f8417,
+    type: 3}
+  skillVFX: {fileID: 8927000065759672434, guid: d5b071eb3da8b3548abea1a6a2ba5125,
+    type: 3}
+  icon: {fileID: 0}
+  cooldown: 15
+  range: 2
+  damage: 100
+  description: 
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000}
+        m_TargetAssemblyTypeName: TargetRangeSkill, Assembly-CSharp
+        m_MethodName: SkillEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  typeOfSkill: 1
+  offsetInstantiate: {x: 0, y: 4, z: 0}

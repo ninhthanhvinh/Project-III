@@ -18,6 +18,15 @@ MonoBehaviour:
     - stat: 0
       levels:
       - 10000
+    - stat: 2
+      levels:
+      - 200
+    - stat: 3
+      levels:
+      - 2000
+    - stat: 5
+      levels:
+      - 100
     - stat: 1
       levels:
-      - 20000
+      - 4

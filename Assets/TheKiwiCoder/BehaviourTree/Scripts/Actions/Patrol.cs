@@ -19,6 +19,7 @@ namespace TheKiwiCoder
             context.agent.destination = GenerateRandomPoint();
             context.agent.updateRotation = updateRotation;
             context.agent.acceleration = acceleration;
+            context.animator.Play("Run");
         }
 
         protected override void OnStop()

@@ -37,3 +37,4 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   typeOfSkill: 1
+  offsetInstantiate: {x: 0, y: 0, z: 0}

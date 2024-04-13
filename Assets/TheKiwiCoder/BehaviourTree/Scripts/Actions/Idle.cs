@@ -13,7 +13,7 @@ namespace TheKiwiCoder
         protected override void OnStart()
         {
             timer = time;
-            context.transform.GetComponent<Enemy>().PlayAnimation("Idle");
+            context.animator.Play("Idle");
         }
 
         protected override void OnStop()
@@ -30,5 +30,6 @@ namespace TheKiwiCoder
             }   
             return State.Running;
         }
+
     }
 }

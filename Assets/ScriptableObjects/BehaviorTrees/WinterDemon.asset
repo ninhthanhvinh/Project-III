@@ -172,7 +172,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  index: 0
+  index: 1
 --- !u!114 &-166485557449634477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,12 +270,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 23060714036af5e4fb19a04aa43f8761
-  position: {x: -362.84253, y: 331.3475}
+  position: {x: -414.40005, y: 331.19998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  index: 1
+  index: 0
 --- !u!114 &1954816824670627839
 MonoBehaviour:
   m_ObjectHideFlags: 0

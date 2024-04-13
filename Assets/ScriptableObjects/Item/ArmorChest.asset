@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c860a33e199134b96d7bb209356f74, type: 3}
+  m_Name: ArmorChest
+  m_EditorClassIdentifier: 
+  itemID: 6d7f7c61-5f86-41d3-af98-2b410e975a39
+  displayName: Chest Armor
+  description: 
+  icon: {fileID: 21300000, guid: ed371d4bbbbfba84a832cfc04f1082b5, type: 3}
+  pickup: {fileID: 2953628394942033195, guid: 7dec659281247e44095434e52e8945ec, type: 3}
+  stackable: 0
+  allowedEquipLocation: 2
+  additiveModifiers:
+  - stat: 2
+    value: 20
+  - stat: 1
+    value: -0.2
+  percentageModifiers: []

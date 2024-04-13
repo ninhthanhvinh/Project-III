@@ -7,10 +7,11 @@ using System.Collections;
 using UnityEngine;
 using RPG.Skills;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 namespace Control
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IModifierProvider
     {
         Animator animator;
         BaseStats baseStats;
@@ -19,9 +20,15 @@ namespace Control
         Slide slide;
         float dmg;
 
+        List<Modifier> environmentModifier;
 
         private bool canAttack = true;
         public bool CanAttack { get => canAttack; set => canAttack = value; }
+
+        public void AddModifier(Modifier modifier)
+        {
+            environmentModifier.Add(modifier);
+        }
 
 
         bool isDashing = false;
@@ -129,6 +136,30 @@ namespace Control
                     break;
                 default:
                     break;
+            }
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if (environmentModifier == null) yield break;
+            foreach (var modifier in environmentModifier)
+            {
+                if (modifier.stat == stat)
+                {
+                    yield return modifier.value;
+                }
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (environmentModifier == null) yield break;
+            foreach (var modifier in environmentModifier)
+            {
+                if (modifier.stat == stat)
+                {
+                    yield return modifier.value;
+                }   
             }
         }
     }

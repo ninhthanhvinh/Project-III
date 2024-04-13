@@ -25,6 +25,27 @@ MonoBehaviour:
   updateRotation: 1
   acceleration: 40
   tolerance: 1
+--- !u!114 &-2335293940703919526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d68697d4dbd45441b01a4b1a9a3bd5c, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 51488f52355414049b61210379642a95
+  position: {x: -119.52181, y: -111.19994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  time: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,8 +64,8 @@ MonoBehaviour:
   - {fileID: 123872215079177710}
   - {fileID: 8440876345355499011}
   - {fileID: 5618578633093855746}
-  - {fileID: 5471315257872667017}
   - {fileID: -9119381051179519721}
+  - {fileID: -2335293940703919526}
   blackboard:
     moveToPosition: {x: -640.39, y: 0.6234665, z: -591.7367}
 --- !u!114 &123872215079177710
@@ -68,27 +89,6 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   child: {fileID: 5618578633093855746}
---- !u!114 &5471315257872667017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9e411f4095d0a44acd9a25323f5e73, type: 3}
-  m_Name: Log
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 1122b6692d5dba34baf624363c8c8e5b
-  position: {x: -106.75344, y: -111.20008}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  drawGizmos: 0
-  message: alo 1234
 --- !u!114 &5618578633093855746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,4 +134,4 @@ MonoBehaviour:
   drawGizmos: 0
   children:
   - {fileID: -9119381051179519721}
-  - {fileID: 5471315257872667017}
+  - {fileID: -2335293940703919526}
