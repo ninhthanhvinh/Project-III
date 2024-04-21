@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 [System.Serializable]
@@ -93,13 +94,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(string _name, Transform owner)
     {
-
+        
         for (int i = 0; i < sounds.Length; i++)
         {
             if (sounds[i].name == _name)
             {
                 sounds[i].SetSource(sounds[i].Source, owner);
-                
+                //sounds[i].SetSource(CreateSource(owner), owner);
+
                 sounds[i].Play();
                 return;
             }
@@ -107,5 +109,20 @@ public class SoundManager : MonoBehaviour
 
         // no sound with _name
         Debug.LogWarning("Audio Manager: Sound not found");
+    }
+
+
+    private AudioSource CreateSource(Transform parent)
+    {
+        if (parent.TryGetComponent<AudioSource>(out var source))
+        {
+            return source;
+        }
+
+        GameObject _go = new("Sound_");
+        _go.transform.SetParent(parent);
+        AudioSource newSource = _go.AddComponent<AudioSource>();
+        return newSource;
+
     }
 }

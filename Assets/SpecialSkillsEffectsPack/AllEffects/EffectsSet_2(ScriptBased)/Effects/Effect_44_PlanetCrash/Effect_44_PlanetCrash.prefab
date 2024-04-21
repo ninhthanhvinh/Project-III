@@ -14841,6 +14841,7 @@ MonoBehaviour:
   mtag: 
   isShieldActive: 0
   isHitMake: 1
+  skill: {fileID: 11400000, guid: 93774a34f574ec24cbd414e922d0ce77, type: 2}
 --- !u!114 &6577727962464069326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14855,4 +14856,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768

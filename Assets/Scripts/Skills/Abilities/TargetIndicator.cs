@@ -33,7 +33,7 @@ public class TargetIndicator : Indicator
         {
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                Vector3 target = new Vector3(hit.point.x, transform.position.y + 0.5f, hit.point.z);
+                Vector3 target = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                 var distance = Mathf.Min(maxRange, Vector3.Distance(transform.position, target));
                 Vector3 newHitPos = transform.position + (target - transform.position).normalized * distance;
                 targetCanvas.transform.position = newHitPos;

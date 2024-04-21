@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RPG.Skills;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ public class ObjectMoveDestroy : MonoBehaviour
     public string mtag;
     public bool isShieldActive = false;
     public bool isHitMake = true;
+    public Skill skill;
 
     float time;
     bool ishit;
@@ -55,6 +57,8 @@ public class ObjectMoveDestroy : MonoBehaviour
         if (isHitMake == false)
             return;
         m_makedObject = Instantiate(m_hitObject, hit.point, Quaternion.LookRotation(hit.normal)).gameObject;
+        AreaOfEffect areaOfEffect = GetComponent<AreaOfEffect>();
+        areaOfEffect.Apply(areaOfEffect.GetOwner(), skill);
         m_makedObject.transform.parent = transform.parent;
         m_makedObject.transform.localScale = new Vector3(1, 1, 1);
     }
@@ -64,6 +68,8 @@ public class ObjectMoveDestroy : MonoBehaviour
         if (isHitMake == false)
             return;
         m_makedObject = Instantiate(m_hitObject, point.transform.position, point.rotation).gameObject;
+        AreaOfEffect areaOfEffect = GetComponent<AreaOfEffect>();
+        areaOfEffect.Apply(areaOfEffect.GetOwner(), skill);
         m_makedObject.transform.parent = transform.parent;
         m_makedObject.transform.localScale = new Vector3(1, 1, 1);
     }

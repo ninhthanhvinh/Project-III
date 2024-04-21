@@ -18,7 +18,7 @@ public class TargetRangeSkill : Skill
     public override void Use(PlayerController user)
     {
         user.CanAttack = false;
-        GameObject indicator = Instantiate(this.indicatorPrefab, user.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity, user.transform);
+        GameObject indicator = Instantiate(this.indicatorPrefab, user.transform.position + new Vector3(0f, .25f, 0f), Quaternion.identity, user.transform);
         TargetIndicator targetIndicator = indicator.GetComponent<TargetIndicator>();
         user.StartCoroutine(targetIndicator.FindingArea(user, this));
     }

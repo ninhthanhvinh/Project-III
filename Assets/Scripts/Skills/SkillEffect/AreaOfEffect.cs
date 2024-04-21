@@ -15,25 +15,16 @@ namespace RPG.Skills
             Collider[] colliders = Physics.OverlapSphere(transform.position, skill.range, characterLayer);
             foreach (Collider collider in colliders)
             {
-                
                 if (collider.gameObject != owner)
                 {
-
+                    Debug.Log(collider.gameObject.name);
                     collider.gameObject.GetComponent<Health>().TakeDamage(owner, skill.damage);
                 }
             }
         }
-
-        // Start is called before the first frame update
-        void Start()
+        public GameObject GetOwner()
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            return owner;
         }
     }    
 }

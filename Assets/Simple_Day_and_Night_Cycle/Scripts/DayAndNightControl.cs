@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System.Collections;
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityQuaternion;
 
 [System.Serializable]
 public class DayColors
@@ -151,4 +152,9 @@ public class DayAndNightControl : MonoBehaviour {
 			GUILayout.VerticalSlider (currentTime, 0f, 1f);
 		}
 	}
+
+	public void ChangeIntensity(float newIntensity, float time)
+	{
+        directionalLight.intensity = Mathf.Lerp(directionalLight.intensity, newIntensity, time * Time.deltaTime);
+    }
 }

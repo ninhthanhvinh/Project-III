@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 3}
   skillVFX: {fileID: 8927000065759672434, guid: d5b071eb3da8b3548abea1a6a2ba5125,
     type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f4ff402319a68fb41bc2e4b67c6b9bef, type: 3}
   cooldown: 15
   range: 2
   damage: 100

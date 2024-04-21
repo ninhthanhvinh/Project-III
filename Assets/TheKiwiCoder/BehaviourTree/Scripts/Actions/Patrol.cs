@@ -31,6 +31,7 @@ namespace TheKiwiCoder
         {
             if (context.agent.pathPending)
             {
+                SoundManager.instance.PlaySound("run", context.transform);
                 return State.Running;
             }
 

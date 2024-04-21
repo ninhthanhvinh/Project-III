@@ -57,10 +57,6 @@ public class PlayerMovement : MonoBehaviour, ISaveable
         animator.SetFloat("Speed", _speed);
     }
 
-    private void FixedUpdate()
-    {
-       
-    }
 
     public object CaptureState()
     {

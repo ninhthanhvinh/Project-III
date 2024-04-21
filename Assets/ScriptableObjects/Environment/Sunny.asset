@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5052a10e1e731f74e9a9e155222ee6aa, type: 3}
   m_Name: Sunny
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 5
   modifiers:
   - stat: 0
     value: 50
+  weatherPrefab: {fileID: 0}
+  sunIntensity: 1

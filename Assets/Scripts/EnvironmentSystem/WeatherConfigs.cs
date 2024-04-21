@@ -9,5 +9,16 @@ public class WeatherConfigs : ScriptableObject
     [SerializeField] private float duration;
     [SerializeField] private Modifier[] modifiers;
 
+    [SerializeField] private GameObject weatherPrefab;
+    [SerializeField] private float sunIntensity;
+
+    public float Duration { get => duration; }
+
     public Modifier[] Modifiers { get => modifiers; }
+
+    public void OnWeatherUpdate()
+    {
+        FindObjectOfType<DayAndNightControl>().ChangeIntensity(sunIntensity, 10);
+    }
+
 }

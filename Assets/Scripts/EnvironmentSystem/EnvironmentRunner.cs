@@ -6,9 +6,11 @@ using UnityEngine.Rendering.Universal;
 public class EnvironmentRunner : MonoBehaviour
 {
     public static EnvironmentRunner instance;
-    public List<IWeather> weathers;
-    public IWeather currentWeather;
+    public List<WeatherConfigs> weathers;
+    public WeatherConfigs currentWeather;
     private List<Modifier> currentModifier;
+
+    private int weatherIndex;
     // Start is called before the first frame update
     void Awake()
     {
@@ -20,6 +22,13 @@ public class EnvironmentRunner : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        currentModifier = new();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(ChangeWeather(weathers[0], 0f));
+        weatherIndex = 0;
     }
 
     // Update is called once per frame
@@ -28,11 +37,28 @@ public class EnvironmentRunner : MonoBehaviour
         currentWeather?.OnWeatherUpdate();
     }
 
-    public void ChangeWeather(IWeather newWeather)
+    public IEnumerator ChangeWeather(WeatherConfigs newWeather, float timer)
     {
-        currentWeather?.OnWeatherExit();
+        yield return new WaitForSeconds(timer);
+        if (currentWeather != null)
+            foreach (var modifier in currentWeather.Modifiers)
+            {
+                RemoveModifier(modifier);
+            }
+
         currentWeather = newWeather;
-        currentWeather.OnWeatherEnter();
+        foreach (var modifier in currentWeather.Modifiers)
+        {
+            AddModifier(modifier);
+        }
+
+        weatherIndex++;
+        if (weatherIndex > weathers.Count - 1)
+        {
+            weatherIndex = 0;
+        }
+
+        StartCoroutine(ChangeWeather(weathers[weatherIndex], currentWeather.Duration));
     }
 
     public void AddModifier(Modifier modifier)
