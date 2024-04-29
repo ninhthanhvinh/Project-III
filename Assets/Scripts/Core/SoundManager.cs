@@ -17,6 +17,9 @@ public class Sound
     [Range(0f, .5f)]
     public float randomPitch = .1f;
 
+    [Range(0f, 1f)]
+    public float spatialBlend = .5f;
+
     public bool loop = false;
 
     public bool isMusic;
@@ -33,6 +36,7 @@ public class Sound
         source.transform.localPosition = Vector3.zero;
         source.clip = clip;
         source.loop = loop;
+        source.spatialBlend = spatialBlend;
     }
 
     public void Play()
@@ -99,8 +103,8 @@ public class SoundManager : MonoBehaviour
         {
             if (sounds[i].name == _name)
             {
-                sounds[i].SetSource(sounds[i].Source, owner);
-                //sounds[i].SetSource(CreateSource(owner), owner);
+                //sounds[i].SetSource(sounds[i].Source, owner);
+                sounds[i].SetSource(CreateSource(owner), owner);
 
                 sounds[i].Play();
                 return;
@@ -114,15 +118,16 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource CreateSource(Transform parent)
     {
-        if (parent.TryGetComponent<AudioSource>(out var source))
+        var source = parent.GetComponentInChildren<AudioSource>();
+        if (source != null)
         {
             return source;
         }
 
         GameObject _go = new("Sound_");
         _go.transform.SetParent(parent);
-        AudioSource newSource = _go.AddComponent<AudioSource>();
-        return newSource;
+        source = _go.AddComponent<AudioSource>();
+        return source;
 
     }
 }
