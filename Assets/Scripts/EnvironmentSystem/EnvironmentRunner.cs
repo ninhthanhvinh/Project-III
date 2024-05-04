@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
 
 public class EnvironmentRunner : MonoBehaviour
@@ -11,6 +12,8 @@ public class EnvironmentRunner : MonoBehaviour
     private List<Modifier> currentModifier;
     private GameObject player;
     private int weatherIndex;
+
+    public UnityEvent<List<Modifier>> OnWeatherChange;
     // Start is called before the first frame update
     void Awake()
     {
@@ -41,6 +44,8 @@ public class EnvironmentRunner : MonoBehaviour
     public IEnumerator ChangeWeather(WeatherConfigs newWeather, float timer)
     {
         yield return new WaitForSeconds(timer);
+
+        // Remove current weather modifiers
         if (currentWeather != null)
             foreach (var modifier in currentWeather.Modifiers)
             {
@@ -48,22 +53,37 @@ public class EnvironmentRunner : MonoBehaviour
             }
 
         currentWeather = newWeather;
+        
+        //Add new weather modifiers
         foreach (var modifier in currentWeather.Modifiers)
         {
             AddModifier(modifier);
         }
-
+        //Apply modifiers to entities in map
+        OnWeatherChange.Invoke(currentModifier);
         weatherIndex++;
         if (weatherIndex > weathers.Count - 1)
         {
             weatherIndex = 0;
         }
 
+        //Execute effects
+        if (currentWeather.Effects != null)
+        {
+            foreach (var effect in currentWeather.Effects)
+            {
+                effect.ExecuteEffect(player);
+            }
+        }
+
+        //Instantiate weather prefab
         if (currentWeather.WeatherPrefab != null)
         {
-            GameObject weatherPrf = Instantiate(currentWeather.WeatherPrefab, player.transform.position, Quaternion.identity);
+            GameObject weatherPrf = Instantiate(currentWeather.WeatherPrefab, player.transform.position + new Vector3(0f, 20f, 0f), Quaternion.identity);
             StartCoroutine(EndWeather(weatherPrf, currentWeather.Duration));
         }
+
+        //Change to next weather
         StartCoroutine(ChangeWeather(weathers[weatherIndex], currentWeather.Duration));
     }
 

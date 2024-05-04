@@ -68,8 +68,9 @@ namespace RPG.Enemy
         private void OnTriggerEnter(Collider other)
         {
             float damage = GetComponent<BaseStats>().GetStats(Stat.Damage);
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.CompareTag("Player"))
             {
+                Debug.Log("Player Hit");
                 other.GetComponent<Attributes.Health>().TakeDamage(gameObject, damage);
             }
         }

@@ -9,14 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5052a10e1e731f74e9a9e155222ee6aa, type: 3}
-  m_Name: Sunny
+  m_Script: {fileID: 11500000, guid: 5ff70bec3376a1042bfffe64ed15db4d, type: 3}
+  m_Name: OTEffectConfig
   m_EditorClassIdentifier: 
-  duration: 5
-  modifiers:
-  - stat: 0
-    value: 50
-  effects:
-  - {fileID: 11400000, guid: 7989980de3cb998498996de0b48058d0, type: 2}
-  weatherPrefab: {fileID: 0}
-  sunIntensity: 1
+  statAffected: 0
+  value: 10

@@ -68,9 +68,9 @@ namespace RPG.Attributes
                 {
                     return;
                 }
-                AwardExperience(dmgDealer);
-                FindObjectOfType<LevelManager>().GetComponent<LevelManager>().OnEnemyDeath(gameObject.GetComponent<Enemies>());            
                 OnDead.Invoke();
+                FindObjectOfType<LevelManager>().GetComponent<LevelManager>().OnEnemyDeath(gameObject.GetComponent<Enemies>());            
+                AwardExperience(dmgDealer);
             }
         }
         private void Die()

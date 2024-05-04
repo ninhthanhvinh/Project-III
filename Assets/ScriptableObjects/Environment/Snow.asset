@@ -15,7 +15,8 @@ MonoBehaviour:
   duration: 10
   modifiers:
   - stat: 1
-    value: -2
+    value: -4
+  effects: []
   weatherPrefab: {fileID: 877965936548573063, guid: fc127cd40e6649c44a5ab85eff0dafc6,
     type: 3}
   sunIntensity: 0.5

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    private float damage = 0f;
+    private float damage = 10f;
     private Vector3 direction = Vector3.zero;
     public float Damage { set { damage = value; } }
     public Vector3 Direction { set { direction = value; } }
@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if (other.CompareTag("Player"))
         {
             other.GetComponent<Health>().TakeDamage(gameObject, damage);

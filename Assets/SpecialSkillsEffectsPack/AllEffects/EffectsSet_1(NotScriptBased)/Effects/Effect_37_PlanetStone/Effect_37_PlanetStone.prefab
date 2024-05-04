@@ -63805,6 +63805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 382519865314507467}
   - component: {fileID: 9149197942141723163}
+  - component: {fileID: 4261424631654354375}
   m_Layer: 0
   m_Name: Effect_37_PlanetStone
   m_TagString: Untagged
@@ -63843,6 +63844,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!135 &4261424631654354375
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382519865314507466}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 16.96
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &382519865361217502
 GameObject:
   m_ObjectHideFlags: 0

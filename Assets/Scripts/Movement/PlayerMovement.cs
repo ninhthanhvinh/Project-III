@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour, ISaveable
 
             Vector3 moveDir = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
+            Debug.Log(GetComponent<BaseStats>().GetStats(Stat.Speed));
             MoveSpeed = GetComponent<BaseStats>().GetStats(Stat.Speed);
 
             transform.position += moveDir * MoveSpeed * Time.deltaTime;

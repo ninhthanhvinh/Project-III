@@ -25,9 +25,13 @@ namespace Control
         private bool canAttack = true;
         public bool CanAttack { get => canAttack; set => canAttack = value; }
 
-        public void AddModifier(Modifier modifier)
+        public void UpdateModifier(List<Modifier> modifiers)
         {
-            environmentModifier.Add(modifier);
+            environmentModifier.Clear();
+            foreach (var modifier in modifiers)
+            {
+                environmentModifier.Add(modifier);
+            }
         }
 
 
@@ -45,8 +49,13 @@ namespace Control
             slide = GetComponentInChildren<Slide>();
             actionStore = GetComponent<ActionStore>();
             skillController = GetComponent<SkillController>();
+            environmentModifier = new List<Modifier>();
         }
 
+        private void Start()
+        {
+            EnvironmentRunner.instance.OnWeatherChange.AddListener(UpdateModifier);
+        }
 
         private void Update()
         {
