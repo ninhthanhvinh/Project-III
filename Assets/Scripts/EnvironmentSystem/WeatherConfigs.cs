@@ -13,8 +13,11 @@ public class WeatherConfigs : ScriptableObject
     [SerializeField] private float sunIntensity;
 
     public float Duration { get => duration; }
+    public GameObject WeatherPrefab { get => weatherPrefab; }
 
     public Modifier[] Modifiers { get => modifiers; }
+
+
 
     public void OnWeatherUpdate()
     {

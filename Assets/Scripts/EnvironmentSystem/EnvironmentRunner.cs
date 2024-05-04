@@ -9,7 +9,7 @@ public class EnvironmentRunner : MonoBehaviour
     public List<WeatherConfigs> weathers;
     public WeatherConfigs currentWeather;
     private List<Modifier> currentModifier;
-
+    private GameObject player;
     private int weatherIndex;
     // Start is called before the first frame update
     void Awake()
@@ -29,6 +29,7 @@ public class EnvironmentRunner : MonoBehaviour
     {
         StartCoroutine(ChangeWeather(weathers[0], 0f));
         weatherIndex = 0;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -58,6 +59,11 @@ public class EnvironmentRunner : MonoBehaviour
             weatherIndex = 0;
         }
 
+        if (currentWeather.WeatherPrefab != null)
+        {
+            GameObject weatherPrf = Instantiate(currentWeather.WeatherPrefab, player.transform.position, Quaternion.identity);
+            StartCoroutine(EndWeather(weatherPrf, currentWeather.Duration));
+        }
         StartCoroutine(ChangeWeather(weathers[weatherIndex], currentWeather.Duration));
     }
 
@@ -70,4 +76,11 @@ public class EnvironmentRunner : MonoBehaviour
     {
         currentModifier.Remove(modifier);
     }
+
+    private IEnumerator EndWeather(GameObject weather, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(weather);
+    }
+
 }
