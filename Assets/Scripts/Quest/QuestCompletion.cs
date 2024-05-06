@@ -7,8 +7,8 @@ namespace RPG.Quests
 {
     public class QuestCompletion : MonoBehaviour
     {
-        [SerializeField] Quest quest;
-        [SerializeField] string objective;
+        [SerializeField] protected Quest quest;
+        [SerializeField] protected string objective;
         [SerializeField] private GameObject notiUI;
         public UnityEvent OnComplete;
 

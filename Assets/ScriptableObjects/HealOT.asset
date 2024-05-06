@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ff70bec3376a1042bfffe64ed15db4d, type: 3}
-  m_Name: OTEffectConfig
+  m_Name: HealOT
   m_EditorClassIdentifier: 
   statAffected: 0
-  value: -100
+  value: 50
   duration: 5

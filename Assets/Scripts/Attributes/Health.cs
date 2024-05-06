@@ -62,6 +62,7 @@ namespace RPG.Attributes
         public void TakeDamage(GameObject dmgDealer, float damage)
         {
             healthPoints.value = Mathf.Max(healthPoints.value + defense.value * DEFENCE_AFFECT_ON_DAMAGE - damage, 0);
+            DamagePopUpGenerator.current.CreatePopUp(transform.position + new Vector3(0f, 1f, 0.5f), damage.ToString(), Color.red);
             if (healthPoints.value <= 0)
             {
                 if (dmgDealer == null)
@@ -79,6 +80,8 @@ namespace RPG.Attributes
             isDead = true;
             if(TryGetComponent<Animator>(out var anim))
                 anim.SetTrigger("die");
+            else if(GetComponentInChildren<Animator>() != null)
+                GetComponentInChildren<Animator>().SetTrigger("die");
             //GetComponent<ActionScheduler>().CancelCurrentAction();
             //GameManager.instance.GetComponent<EnemySpawner>().RemoveEnemy(gameObject);
             if (gameObject.tag != "Player")
@@ -120,6 +123,7 @@ namespace RPG.Attributes
 
         public void Heal(float healthToRestore)
         {
+            DamagePopUpGenerator.current.CreatePopUp(transform.position + new Vector3(0f, 1f, 0.5f), healthToRestore.ToString(), Color.green);
             healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetComponent<BaseStats>().GetStats(Stat.Health));
         }
 

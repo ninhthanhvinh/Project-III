@@ -37,4 +37,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   typeOfSkill: 1
+  weatherAffections:
+  - weather: {fileID: 11400000, guid: b048e0de1332c02479de71487497b267, type: 2}
+    damagePercentage: 1
   offsetInstantiate: {x: 0, y: 0, z: 0}

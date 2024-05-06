@@ -9,6 +9,8 @@ namespace RPG.Quests
     {
         private void OnTriggerEnter(Collider other)
         {
+            QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+            if (!questList.HasQuest(quest)) return;
             if (other.CompareTag("Player") )
                 CompleteObjective();
         }

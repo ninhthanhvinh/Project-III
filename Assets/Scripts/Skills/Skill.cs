@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using RPG.Enemy;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 namespace RPG.Skills
 {
     
@@ -19,6 +20,7 @@ namespace RPG.Skills
         public string description;
         public UnityEvent<PlayerController, Vector3> OnFinish;
         public TypeOfSkill typeOfSkill;
+        [SerializeField] private List<WeatherAffection> weatherAffections;
         public virtual void Use(PlayerController user)
         {
             
@@ -36,5 +38,25 @@ namespace RPG.Skills
 
             yield return new WaitForSeconds(1f);   
         }
+
+        public float GetDamage()
+        {
+            WeatherConfigs currentWeather = EnvironmentRunner.instance.currentWeather;
+            foreach (WeatherAffection weatherAffection in weatherAffections)
+            {
+                if (weatherAffection.weather == currentWeather)
+                {
+                    return damage + damage * weatherAffection.damagePercentage;
+                }
+            }
+            return damage;
+        }
+    }
+
+    [System.Serializable]
+    public struct WeatherAffection
+    {
+        public WeatherConfigs weather;
+        public float damagePercentage;
     }
 }

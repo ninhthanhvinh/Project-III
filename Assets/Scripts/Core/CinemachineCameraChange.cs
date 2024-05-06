@@ -7,6 +7,7 @@ using UnityEngine;
 public class CinemachineCameraChange : MonoBehaviour
 {
     [SerializeField] private List<GameObject> listCamera;
+    [SerializeField] private LayerMask colliderLayer;
 
     private int currentCameraIndex = 0;
     private Transform player;
@@ -27,11 +28,10 @@ public class CinemachineCameraChange : MonoBehaviour
             return;
         }
         Vector3 direction = player .position - transform.position;
-        RaycastHit hit;
-        Physics.Raycast(transform.position, direction, out hit, LayerMask.GetMask("Default"));
+        Physics.Raycast(transform.position, direction, out RaycastHit hit, colliderLayer);
+        Debug.DrawRay(transform.position, direction, Color.red);
         if (Input.GetKeyDown(KeyCode.M) || hit.collider != null && !hit.collider.CompareTag("Player") && timer <= 0f)
         {
-            Debug.Log("Change Camera");
             timer = timeToReChange;
             ChangeCamera(GetNextIndex());
         }
