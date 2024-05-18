@@ -22,6 +22,6 @@ public class WeatherConfigs : ScriptableObject
 
     public void OnWeatherUpdate()
     {
-        FindObjectOfType<DayAndNightControl>().ChangeIntensity(sunIntensity, 10);
+        FindObjectOfType<LightAdjustment>().ChangeIntensity(sunIntensity, 10);
     }
 }

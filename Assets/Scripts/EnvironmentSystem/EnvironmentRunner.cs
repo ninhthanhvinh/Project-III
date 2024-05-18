@@ -30,9 +30,9 @@ public class EnvironmentRunner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ChangeWeather(weathers[0], 0f));
-        weatherIndex = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+        ChangeWeather(weathers[0]);
+        weatherIndex = 0;
     }
 
     // Update is called once per frame
@@ -41,9 +41,8 @@ public class EnvironmentRunner : MonoBehaviour
         currentWeather?.OnWeatherUpdate();
     }
 
-    public IEnumerator ChangeWeather(WeatherConfigs newWeather, float timer)
+    public void ChangeWeather(WeatherConfigs newWeather)
     {
-        yield return new WaitForSeconds(timer);
 
         // Remove current weather modifiers
         if (currentWeather != null)
@@ -72,6 +71,7 @@ public class EnvironmentRunner : MonoBehaviour
         {
             foreach (var effect in currentWeather.Effects)
             {
+                Debug.Log(player);
                 effect.ExecuteEffect(player);
             }
         }
@@ -82,9 +82,6 @@ public class EnvironmentRunner : MonoBehaviour
             GameObject weatherPrf = Instantiate(currentWeather.WeatherPrefab, player.transform.position + new Vector3(0f, 20f, 0f), Quaternion.identity);
             StartCoroutine(EndWeather(weatherPrf, currentWeather.Duration));
         }
-
-        //Change to next weather
-        StartCoroutine(ChangeWeather(weathers[weatherIndex], currentWeather.Duration));
     }
 
     public void AddModifier(Modifier modifier)

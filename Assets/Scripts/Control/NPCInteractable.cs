@@ -9,7 +9,7 @@ public class NPCInteractable : MonoBehaviour
     [SerializeField] AIConversant AIConversant;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             interactCanvas.gameObject.SetActive(true);
         }
@@ -17,7 +17,7 @@ public class NPCInteractable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             interactCanvas.gameObject.SetActive(false);
         }

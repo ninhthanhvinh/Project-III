@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8577857632710469541}
   - component: {fileID: 4205566473712126009}
   - component: {fileID: 1771156613932478507}
+  - component: {fileID: -2417775528316854193}
   m_Layer: 8
   m_Name: DmgPopUp
   m_TagString: Untagged
@@ -323,3 +324,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2417775528316854193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289499097009658771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d1ca117ac6759428f2cdf7ef72fddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

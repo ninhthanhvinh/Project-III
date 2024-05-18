@@ -17,6 +17,7 @@ namespace RPG.Skills
             {
                 if (collider.gameObject != owner)
                 {
+                    Debug.Log("Applying damage to " + collider.gameObject.name);
                     collider.gameObject.GetComponent<Health>().TakeDamage(owner, skill.GetDamage());
                 }
             }

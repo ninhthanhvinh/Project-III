@@ -8,6 +8,7 @@ using UnityEngine;
 using RPG.Skills;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using Cinemachine;
 
 namespace Control
 {
@@ -19,6 +20,7 @@ namespace Control
         SkillController skillController;
         Slide slide;
         float dmg;
+        bool attackMode = false;
 
         List<Modifier> environmentModifier;
 
@@ -41,6 +43,9 @@ namespace Control
         [SerializeField] float dashSpeed = 10f;
         [SerializeField] float dashTime = 0.5f;
 
+        [SerializeField] private CinemachineVirtualCamera battleCamera;
+        [SerializeField] private CinemachineFreeLook normalCamera;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
@@ -59,6 +64,26 @@ namespace Control
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                attackMode = !attackMode;
+                Debug.Log(attackMode);
+                if (attackMode)
+                {
+                    battleCamera.Priority = 20;
+                    normalCamera.Priority = 10;
+                }
+                else
+                {
+                    battleCamera.Priority = 10;
+                    normalCamera.Priority = 20;
+                }
+            }    
+
+            if (!attackMode)
+            {
+                return;
+            }
             if (canAttack && Input.GetMouseButtonDown(0))
             {
                 dmg = baseStats.GetStats(Stat.Damage);
@@ -88,6 +113,22 @@ namespace Control
                 {
                     skillController.Use(i - firstSkill, this);
                 }
+            }
+        }
+
+        private void ChangeCameraMode(bool attackMode)
+        {
+            attackMode = !attackMode;
+            if (attackMode)
+            {
+                battleCamera.Priority = 20;
+                normalCamera.Priority = 10;
+            }
+            else
+            {
+                Debug.Log("Change Camera Mode");
+                battleCamera.Priority = 10;
+                normalCamera.Priority = 20;
             }
         }
 

@@ -114,6 +114,7 @@ Material:
     - _ImpactFactor: 1
     - _ImpactSize: 0.5
     - _InvFade: 1
+    - _IsRotateAngle: 0
     - _Lighting: 0
     - _LinePass: 0
     - _MaskAnimatedSpeed: 1
@@ -136,6 +137,7 @@ Material:
     - _RimLight: 1
     - _RimScale: 10
     - _RimStrength: 15
+    - _RotateAngle: 0
     - _SecondColor: 1
     - _SmoothnessTextureChannel: 0
     - _SoftParticle: 1

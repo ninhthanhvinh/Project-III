@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 5
   modifiers: []
+  effects: []
   weatherPrefab: {fileID: 0}
-  sunIntensity: 0.5
+  sunIntensity: 1

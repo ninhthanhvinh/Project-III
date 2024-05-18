@@ -29,7 +29,7 @@ namespace RPG.Attributes
         {
             percentage = health.GetPercentage();
             healthBar.fillAmount = percentage / 100;
-            healthText.text = string.Format(percentage.ToString() + "%");
+            healthText.text = string.Format(health.GetHealthPoints().ToString() + "/" + health.GetMaxHealthPoints().ToString());
         }
     }
 }

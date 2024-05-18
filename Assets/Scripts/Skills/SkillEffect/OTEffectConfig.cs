@@ -10,7 +10,7 @@ public class OTEffectConfig : Effect
     public float duration = 5f;
     public override void ExecuteEffect(GameObject user)
     {
-        OvertimeEffect effect = user.AddComponent<OvertimeEffect>();
+        HealOvertimeEffect effect = user.AddComponent<HealOvertimeEffect>();
         effect.value = value;
         effect.SetDuration(duration);
     }

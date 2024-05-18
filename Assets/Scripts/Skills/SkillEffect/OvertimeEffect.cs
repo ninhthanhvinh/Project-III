@@ -1,22 +1,18 @@
-using RPG.Attributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OvertimeEffect : MonoBehaviour
 {
-    private float duration = 5f;
-    private Health health;
-    public float value;
+
+    protected float duration = 5f;
+
     private float timer;
     const float tickRate = 1f;
 
-    public void SetDuration(float duration) => this.duration = duration;
-
-    private void Start()
+    public void SetDuration(float duration)
     {
-        health = GetComponent<Health>();
-        StartCoroutine(ExecuteEffect());
+        this.duration = duration;
     }
 
     private void Update()
@@ -24,17 +20,17 @@ public class OvertimeEffect : MonoBehaviour
         if (timer <= 0f)
         {
             timer = tickRate;
-            if (value > 0)
-            {
-                health.Heal(value);
-            }
-            else
-                health.TakeDamage(this.gameObject, -value);
+            Execute();
         }
         timer -= Time.deltaTime;
     }
+    
+    protected virtual void Execute()
+    {
+        Debug.Log("Overtime effect executed");
+    }
 
-    private IEnumerator ExecuteEffect()
+    protected virtual IEnumerator ExecuteEffect()
     {
         yield return new WaitForSeconds(duration);
         Destroy(this);

@@ -39,7 +39,9 @@ namespace Dialogue
             currentNode = currentDialogue.GetRootNode();
             TriggerEnterAction();
             dialogueUI.SetActive(true);
-            GetComponent<PlayerController>().CanAttack = false;
+            if(TryGetComponent<PlayerController>(out var pc)) {
+                   pc.CanAttack = false;
+            }
 
             OnConversationUpdated?.Invoke();
         }
@@ -103,7 +105,10 @@ namespace Dialogue
             currentDialogue = null;
             currentConversant = null;
             OnConversationUpdated();
-            GetComponent<PlayerController>().CanAttack = true;
+            if (TryGetComponent<PlayerController>(out var pc))
+            {
+                pc.CanAttack = true;
+            }
         }
 
 
