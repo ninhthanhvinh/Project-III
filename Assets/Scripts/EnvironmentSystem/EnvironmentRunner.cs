@@ -71,7 +71,6 @@ public class EnvironmentRunner : MonoBehaviour
         {
             foreach (var effect in currentWeather.Effects)
             {
-                Debug.Log(player);
                 effect.ExecuteEffect(player);
             }
         }

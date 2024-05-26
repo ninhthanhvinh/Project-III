@@ -9,6 +9,9 @@ using RPG.Skills;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Cinemachine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 namespace Control
 {
@@ -45,6 +48,8 @@ namespace Control
 
         [SerializeField] private CinemachineVirtualCamera battleCamera;
         [SerializeField] private CinemachineFreeLook normalCamera;
+        [SerializeField] private Volume volume;
+        Vignette vignette;
 
         private void Awake()
         {
@@ -55,6 +60,8 @@ namespace Control
             actionStore = GetComponent<ActionStore>();
             skillController = GetComponent<SkillController>();
             environmentModifier = new List<Modifier>();
+            volume.profile.TryGet(out vignette);
+
         }
 
         private void Start()
@@ -126,7 +133,7 @@ namespace Control
             }
             else
             {
-                Debug.Log("Change Camera Mode");
+                Debug.Log(Vector3.Distance(Camera.main.transform.position, transform.position));
                 battleCamera.Priority = 10;
                 normalCamera.Priority = 20;
             }
@@ -212,6 +219,15 @@ namespace Control
                 }   
             }
         }
+        public IEnumerator Damaged()
+        {
+            Debug.Log(vignette);
+            vignette.color.value = Color.red;
+            vignette.intensity.value = 0.5f;
+            yield return new WaitForSeconds(0.2f);
+            vignette.intensity.value = 0.26f;
+            vignette.color.value = Color.black;
+        }
     }
 
     public enum TypeOfSkill
@@ -220,4 +236,6 @@ namespace Control
         Casting,
         RoundSlash,
     }
+
+    
 }

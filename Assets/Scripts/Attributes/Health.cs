@@ -62,6 +62,10 @@ namespace RPG.Attributes
         public void TakeDamage(GameObject dmgDealer, float damage)
         {
             healthPoints.value = Mathf.Max(healthPoints.value + defense.value * DEFENCE_AFFECT_ON_DAMAGE - damage, 0);
+            if (TryGetComponent<PlayerController> (out var playerController))
+            {
+                StartCoroutine(playerController.Damaged());            
+            }
             DamagePopUpGenerator.current.CreatePopUp(transform.position + new Vector3(0f, 1f, 0.5f), damage.ToString(), Color.red);
             if (healthPoints.value <= 0)
             {
