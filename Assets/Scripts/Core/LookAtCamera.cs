@@ -5,7 +5,9 @@ using UnityEngine;
 public class LookAtCamera : MonoBehaviour
 {
     Camera mainCamera;
+    [SerializeField]
     float _scaleFactor = 50f;
+    [SerializeField] private bool isScale = false;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,8 @@ public class LookAtCamera : MonoBehaviour
     void Update()
     {
         transform.rotation = mainCamera.transform.rotation;
-        Scale();
+        if (isScale)
+            Scale();
     }
 
     
