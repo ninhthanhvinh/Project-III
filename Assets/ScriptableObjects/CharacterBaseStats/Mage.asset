@@ -23,10 +23,10 @@ MonoBehaviour:
       - 30
     - stat: 1
       levels:
-      - 200
+      - 20
     - stat: 2
       levels:
-      - 10
+      - 100
     - stat: 5
       levels:
-      - 20
+      - 30

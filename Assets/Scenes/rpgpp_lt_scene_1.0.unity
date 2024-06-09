@@ -1920,6 +1920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5931469477181275298, guid: 9e3385a8a02c402429d898a10d25753d,
         type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 1188064452}
+    - target: {fileID: 5931469477181275298, guid: 9e3385a8a02c402429d898a10d25753d,
+        type: 3}
       propertyPath: canAttack
       value: 1
       objectReference: {fileID: 0}
@@ -6936,12 +6941,12 @@ PrefabInstance:
     - target: {fileID: 2120690589652399456, guid: 2f5ddbcbc4c87cb48b908730f3e8dc4f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.46752623
+      value: 0.46752626
       objectReference: {fileID: 0}
     - target: {fileID: 2120690589652399456, guid: 2f5ddbcbc4c87cb48b908730f3e8dc4f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04176825
+      value: -0.041768257
       objectReference: {fileID: 0}
     - target: {fileID: 3097553068164364389, guid: 2f5ddbcbc4c87cb48b908730f3e8dc4f,
         type: 3}

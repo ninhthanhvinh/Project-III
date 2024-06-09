@@ -24,7 +24,6 @@ public class PlayerInteract : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, interactDistance);
         foreach (Collider collider in colliders)
         {
-            Debug.Log(collider.name);
             if (collider.TryGetComponent<NPCInteractable>(out NPCInteractable npc))
             {
                 npc.Interact();
