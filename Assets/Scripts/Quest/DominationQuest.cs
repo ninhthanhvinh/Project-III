@@ -1,6 +1,4 @@
 using RPG.Attributes;
-using RPG.Quests;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace RPG.Quests

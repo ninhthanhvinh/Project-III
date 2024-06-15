@@ -1,9 +1,6 @@
-using RPG.Inventories;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Control
+namespace RPG.Inventories
 {
     [RequireComponent(typeof(Pickup))]
     public class RunoverPickup : MonoBehaviour

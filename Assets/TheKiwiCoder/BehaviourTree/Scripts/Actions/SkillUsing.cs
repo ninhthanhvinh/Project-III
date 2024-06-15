@@ -27,10 +27,10 @@ namespace TheKiwiCoder
         protected override State OnUpdate()
         {
             if (enemy.CheckCD(skillUsed)) return State.Failure;
-            if (context.targetPosition == Vector3.zero) return State.Failure;
-            Debug.Log("Using Skill");
+            if (context.target == null) return State.Failure;
+            Debug.Log("Using Skill" + context.target);
             enemy.PlayAnimation("Skill 0" + index.ToString());
-            enemy.UseSkill(context.targetPosition, index);
+            enemy.UseSkill(context.target.position, index);
             return State.Success;
         }
     }

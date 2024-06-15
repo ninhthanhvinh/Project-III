@@ -5,14 +5,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "TimedEffect", menuName = "Skills/Timed Effect", order = 0)]
-public class TimedEffect : Effect
+namespace RPG.Effects
 {
-    public float duration = 10f;
-    public override void ExecuteEffect(GameObject user)
+    [CreateAssetMenu(fileName = "TimedEffect", menuName = "Skills/Timed Effect", order = 0)]
+    public class TimedEffect : Effect
     {
-        user.GetComponent<BuffHolder>().AddBuff(statAffected, value, duration);
-        
-    }
+        public float duration = 10f;
+        public override void ExecuteEffect(GameObject user)
+        {
+            user.GetComponent<BuffHolder>().AddBuff(statAffected, value, duration);
 
+        }
+
+    }
 }

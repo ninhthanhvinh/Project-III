@@ -22,7 +22,7 @@ namespace TheKiwiCoder {
             if (enemy.CanAttack())
             {
                 Debug.Log("Attacking");
-                enemy.Attack(context.targetPosition);
+                enemy.Attack(context.target.position);
                 return State.Success;
             }
             return State.Failure;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using RPG.Skills;
+using RPG.Effects;
 
 [CreateAssetMenu(fileName = "OTEffectConfig", menuName = "Skills/Effect/OTEffectConfig")]
 public class OTEffectConfig : Effect

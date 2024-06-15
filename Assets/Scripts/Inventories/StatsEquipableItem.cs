@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using RPG.Inventories;
 using RPG.Stats;
 using UnityEngine;
 

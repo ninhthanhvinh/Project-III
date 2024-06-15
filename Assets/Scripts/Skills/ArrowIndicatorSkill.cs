@@ -1,8 +1,6 @@
 using Control;
+using RPG.Effects;
 using RPG.Enemy;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RPG.Skills
@@ -18,7 +16,8 @@ namespace RPG.Skills
         public override void Use(PlayerController user)
         {
             user.CanAttack = false;
-            GameObject indicator = Instantiate(this.indicatorPrefab, user.transform.position + new Vector3(0, 2f, 0), Quaternion.identity, user.transform);
+            GameObject indicator = Instantiate(this.indicatorPrefab, 
+                user.transform.position + new Vector3(0, 2f, 0), Quaternion.identity, user.transform);
             ArrowIndicatorUI arrowIndicatorUI = indicator.GetComponent<ArrowIndicatorUI>();
             user.StartCoroutine(arrowIndicatorUI.FindingArea(user, this));
         }
@@ -28,7 +27,8 @@ namespace RPG.Skills
             playerController.transform.LookAt(vector3);
             PlayAnimation(playerController);
             SoundManager.instance.PlaySound("slash", playerController.transform);
-            Transform vfx = Instantiate(skillVFX, playerController.transform.position + new Vector3(0, 1f, 0), Quaternion.identity).transform;
+            Transform vfx = Instantiate(skillVFX, playerController.transform.position 
+                + new Vector3(0, 1f, 0), Quaternion.identity).transform;
             vfx.rotation = Quaternion.LookRotation(vector3);
 
             SkillEffect[] effects = vfx.GetComponentsInChildren<SkillEffect>();

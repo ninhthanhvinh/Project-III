@@ -1,17 +1,13 @@
 ﻿using RPG.Attributes;
 using RPG.Inventories;
-using RPG.Saving;
 using RPG.Stats;
-using System;
 using System.Collections;
 using UnityEngine;
 using RPG.Skills;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
-using Unity.VisualScripting;
 
 namespace Control
 {
@@ -69,8 +65,11 @@ namespace Control
             EnvironmentRunner.instance.OnWeatherChange.AddListener(UpdateModifier);
         }
 
+
+
         private void Update()
         {
+            Debug.Log("Update");
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 attackMode = !attackMode;
@@ -112,12 +111,15 @@ namespace Control
                 }
             }
 
+            Debug.Log("Skill");
+
             var firstSkill = KeyCode.F;
             var lastSkill = KeyCode.H;
             for (var i = firstSkill; i <= lastSkill; i++)
             {
                 if (Input.GetKeyDown(i))
                 {
+                    Debug.Log("Use skill");
                     skillController.Use(i - firstSkill, this);
                 }
             }

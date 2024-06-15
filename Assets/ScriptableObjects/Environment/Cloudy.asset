@@ -16,4 +16,4 @@ MonoBehaviour:
   modifiers: []
   effects: []
   weatherPrefab: {fileID: 0}
-  sunIntensity: 1
+  sunIntensity: 0.1

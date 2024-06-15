@@ -1,5 +1,3 @@
-using RPG.Inventories;
-using RPG.Stats;
 using UnityEngine;
 using UnityEngine.AI;
 

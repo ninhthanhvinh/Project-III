@@ -2,7 +2,6 @@ using RPG.Saving;
 using RPG.Stats;
 using GameDevTV.Utils;
 using UnityEngine;
-using System;
 using BehaviorDesigner.Runtime.Tactical;
 using BehaviorDesigner.Runtime;
 using Control;

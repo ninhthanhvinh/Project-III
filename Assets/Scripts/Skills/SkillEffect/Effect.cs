@@ -1,9 +1,7 @@
 using RPG.Stats;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Skills
+namespace RPG.Effects
 {
     public class Effect : ScriptableObject
     {

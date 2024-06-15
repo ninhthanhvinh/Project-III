@@ -19,7 +19,7 @@ namespace TheKiwiCoder {
         public BoxCollider boxCollider;
         public CapsuleCollider capsuleCollider;
         public CharacterController characterController;
-        public Vector3 targetPosition;
+        public Transform target;
         // Add other game specific systems here
 
         public static Context CreateFromGameObject(GameObject gameObject) {

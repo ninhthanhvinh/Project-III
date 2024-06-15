@@ -1,5 +1,4 @@
 using UnityEngine;
-using RPG.Control;
 using Control;
 using RPG.Inventories;
 

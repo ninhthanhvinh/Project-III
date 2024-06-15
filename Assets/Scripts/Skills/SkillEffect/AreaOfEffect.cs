@@ -1,6 +1,4 @@
 using RPG.Attributes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Skills
@@ -18,7 +16,7 @@ namespace RPG.Skills
                 if (collider.gameObject != owner)
                 {
                     Debug.Log("Applying damage to " + collider.gameObject.name);
-                    collider.gameObject.GetComponent<Health>().TakeDamage(owner, skill.GetDamage());
+                    collider.gameObject.GetComponent<Health>().TakeDamage(owner, skill.GetDamage(owner));
                 }
             }
         }

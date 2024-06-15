@@ -1,8 +1,5 @@
 using BehaviorDesigner.Runtime.Tactical;
-using RPG.Attributes;
 using RPG.Stats;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -59,9 +56,10 @@ namespace RPG.Enemy
             return attackAngle;
         }
 
-        public void Attack(Vector3 targetPosition)
+        public virtual void Attack(Vector3 targetPosition)
         {
             animator.SetTrigger("Attack");
+            
             lastAttackTime = Time.time;
         }
 

@@ -1,7 +1,4 @@
-using RPG.Skills;
-using RPG.Stats;
-using System.Collections;
-using System.Collections.Generic;
+using RPG.Effects;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "EnvironmentSystem/WeatherConfigs")]
@@ -22,6 +19,10 @@ public class WeatherConfigs : ScriptableObject
 
     public void OnWeatherUpdate()
     {
-        FindObjectOfType<LightAdjustment>().ChangeIntensity(sunIntensity, 10);
+        LightAdjustment[] light = FindObjectsOfType<LightAdjustment>();
+        foreach (var l in light)
+        {
+            l.ChangeIntensity(sunIntensity, 10f);
+        }
     }
 }

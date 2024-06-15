@@ -1,4 +1,6 @@
+using DuloGames.UI;
 using RPG.Skills;
+using RPG.Stats;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +11,7 @@ namespace RPG.Enemy
     {
         [SerializeField] private List<Skill> skills;
         [SerializeField] private GameObject projectileNAttack;
+        [SerializeField] private Transform projectileSpawnPoint;
 
         private List<Skill> onCD = new();
 
@@ -25,14 +28,18 @@ namespace RPG.Enemy
             }
         }
 
-        //public void Attack()
-        //{
-        //    animator.Play("Attack");
-        //}
-
-        public void PerformNAttack()
+        public override void Attack(Vector3 targetPosition)
         {
-            Instantiate(projectileNAttack, transform.position, Quaternion.identity);
+            animator.Play("Attack");
+            float dmg = GetComponent<BaseStats>().GetStats(Stat.Damage);
+            PerformNAttack(targetPosition, dmg);
+        }
+
+        public void PerformNAttack(Vector3 target, float dmg)
+        {
+            Bullet bullet = Instantiate(projectileNAttack, transform.position, Quaternion.identity).GetComponent<Bullet>();
+            bullet.Direction = (target - transform.position).normalized;
+            bullet.Damage = 2 * dmg;
         }
 
         private IEnumerator EndCD(Skill skill)

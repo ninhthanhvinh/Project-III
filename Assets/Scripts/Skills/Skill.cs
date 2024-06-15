@@ -5,6 +5,7 @@ using RPG.Enemy;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Stats;
 namespace RPG.Skills
 {
     
@@ -39,17 +40,18 @@ namespace RPG.Skills
             yield return new WaitForSeconds(1f);   
         }
 
-        public float GetDamage()
+        public float GetDamage(GameObject owner)
         {
             WeatherConfigs currentWeather = EnvironmentRunner.instance.currentWeather;
+            float ownerDamage = owner.GetComponent<BaseStats>().GetStats(Stat.Damage);
             foreach (WeatherAffection weatherAffection in weatherAffections)
             {
                 if (weatherAffection.weather == currentWeather)
                 {
-                    return damage + damage * weatherAffection.damagePercentage;
+                    return ownerDamage + damage + damage * weatherAffection.damagePercentage;
                 }
             }
-            return damage;
+            return damage + ownerDamage;
         }
     }
 

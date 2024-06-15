@@ -27,11 +27,11 @@ namespace TheKiwiCoder
             {
                 if (Vector3.Angle(context.transform.forward, toTarget) < angle / 2)
                 {
-                    context.targetPosition = target.position;
+                    context.target = target;
                     return State.Success;
                 }
             }
-            context.targetPosition = Vector3.zero;
+            context.target = null;
             return State.Failure;
         }
     }

@@ -1,28 +1,32 @@
 using RPG.Attributes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealOvertimeEffect : OvertimeEffect
+
+namespace RPG.Effects
 {
-    private Health health;
-    public float value;
 
-    private void Start()
+
+    public class HealOvertimeEffect : OvertimeEffect
     {
-        health = GetComponent<Health>();
-        StartCoroutine(ExecuteEffect());
-    }
+        private Health health;
+        public float value;
 
-
-    protected override void Execute()
-    {
-        Debug.Log("HealOvertimeEffect");
-        if (value > 0)
+        private void Start()
         {
-            health.Heal(value);
+            health = GetComponent<Health>();
+            StartCoroutine(ExecuteEffect());
         }
-        else
-            health.TakeDamage(null, -value);
+
+
+        protected override void Execute()
+        {
+            Debug.Log("HealOvertimeEffect");
+            if (value > 0)
+            {
+                health.Heal(value);
+            }
+            else
+                health.TakeDamage(null, -value);
+        }
     }
 }

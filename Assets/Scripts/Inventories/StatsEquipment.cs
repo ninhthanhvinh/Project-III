@@ -1,8 +1,5 @@
-﻿﻿using System.Collections;
-using System.Collections.Generic;
-using RPG.Inventories;
+﻿using System.Collections.Generic;
 using RPG.Stats;
-using UnityEngine;
 
 namespace RPG.Inventories
 {
