@@ -57,6 +57,7 @@ namespace GameDevTV.Core.UI.Tooltips
             if (!tooltip && CanCreateTooltip())
             {
                 tooltip = Instantiate(tooltipPrefab, parentCanvas.transform);
+                tooltip.transform.localPosition = Vector3.zero;
             }
 
             if (tooltip)
