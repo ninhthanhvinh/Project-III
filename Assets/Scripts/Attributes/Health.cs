@@ -87,16 +87,18 @@ namespace RPG.Attributes
                 GetComponentInChildren<Animator>().SetTrigger("die");
             //GetComponent<ActionScheduler>().CancelCurrentAction();
             //GameManager.instance.GetComponent<EnemySpawner>().RemoveEnemy(gameObject);
-            if (gameObject.tag != "Player")
+            if (!gameObject.CompareTag("Player"))
             {
 
                 GetComponent<BehaviorTree>().enabled = false;
+                
             }
             else 
             {
-
+                
                 GetComponent<PlayerController>().enabled = false;
                 GetComponent<PlayerMovement>().enabled = false;
+                GameManager.instance.OnLose.Invoke();
             }
 
             Destroy(gameObject, 5f);
@@ -146,7 +148,7 @@ namespace RPG.Attributes
 
         public void AwardExperience(GameObject dmgDealer)
         {
-            if (!dmgDealer.TryGetComponent<Experience>(out var experience)) return;
+            if (!dmgDealer.TryGetComponent<Experience>(out var experience) || dmgDealer == gameObject) return;
             experience.GainExperience(GetComponent<BaseStats>().GetStats(Stat.ExperienceReward));
         }
 

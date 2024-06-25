@@ -96,13 +96,13 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 1504
-    y: 123
+    y: 122
     width: 200
     height: 100
   condition:
     and: []
   onEnterAction: 
-  onExitAction: 
+  onExitAction: nextScene
 --- !u!114 &-3479484035766085647
 MonoBehaviour:
   m_ObjectHideFlags: 0

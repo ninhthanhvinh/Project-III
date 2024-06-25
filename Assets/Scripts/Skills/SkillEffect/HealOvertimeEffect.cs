@@ -20,7 +20,6 @@ namespace RPG.Effects
 
         protected override void Execute()
         {
-            Debug.Log("HealOvertimeEffect");
             if (value > 0)
             {
                 health.Heal(value);

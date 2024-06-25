@@ -33,7 +33,6 @@ public class Footstep : MonoBehaviour
             };
             system.Emit(ep, 1);
             lastEmit = transform.position;
-            Debug.Log("Emitting");
         }
     }
 }

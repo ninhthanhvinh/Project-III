@@ -77,7 +77,8 @@ public class EnvironmentRunner : MonoBehaviour
         //Instantiate weather prefab
         if (currentWeather.WeatherPrefab != null)
         {
-            WeatherPrefabs weatherPrf = Instantiate(currentWeather.WeatherPrefab, player.transform.position + new Vector3(0f, 20f, 0f), Quaternion.identity).GetComponent<WeatherPrefabs>();
+            WeatherPrefabs weatherPrf = Instantiate(currentWeather.WeatherPrefab, player.transform.position
+                + new Vector3(0f, 20f, 0f), Quaternion.identity).GetComponent<WeatherPrefabs>();
             OnWeatherChange.AddListener(weatherPrf.EndWeather);
         }
     }

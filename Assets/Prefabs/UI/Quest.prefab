@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2381944129936614511}
   - component: {fileID: 36103995148458667}
   - component: {fileID: 5997038602049424221}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5311615499923191058}
   - component: {fileID: 9085618993556686521}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4562828953245528877}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2017685620615905629}
   - component: {fileID: 8934248555929632929}
   - component: {fileID: 5020981918858391551}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,8 +239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -441, y: 0}
-  m_SizeDelta: {x: 1000, y: 150}
+  m_AnchoredPosition: {x: -442.5432, y: 0}
+  m_SizeDelta: {x: 996.9136, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8934248555929632929
 CanvasRenderer:
@@ -348,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7805400684510595717}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 3250782804063599158}
   - component: {fileID: 3643084070890821621}
   - component: {fileID: 6508747418713034999}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 6118526360379542775}
   - component: {fileID: 8988173797467944545}
   - component: {fileID: 4499284982185449287}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,12 +486,12 @@ RectTransform:
   - {fileID: 2017685620615905629}
   - {fileID: 5311615499923191058}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 976.5532, y: -34.87329}
+  m_SizeDelta: {x: 2000, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2175748725021548051
 CanvasRenderer:

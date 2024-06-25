@@ -40,7 +40,6 @@ namespace RPG.Skills
             {
                 effect.Apply(enemy.gameObject, this);
             }
-
         }
     }
 }

@@ -23,6 +23,7 @@ namespace RPG.Attributes
         // Update is called once per frame
         void Update()
         {
+            if (health == null) return;
             percentage = health.GetPercentage();
             healthBar.fillAmount = percentage / 100;
             healthText.text = string.Format(health.GetHealthPoints().ToString() + "/" + health.GetMaxHealthPoints().ToString());

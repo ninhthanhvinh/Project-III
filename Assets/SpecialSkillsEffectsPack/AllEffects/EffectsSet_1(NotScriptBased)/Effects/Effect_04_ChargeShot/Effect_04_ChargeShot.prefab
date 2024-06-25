@@ -34519,6 +34519,7 @@ GameObject:
   - component: {fileID: 7916095762725810947}
   - component: {fileID: 7916095762725810946}
   - component: {fileID: 1616265776622298178}
+  - component: {fileID: 8312603193848631542}
   m_Layer: 0
   m_Name: Effect_04_ChargeShot
   m_TagString: Untagged
@@ -34573,6 +34574,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!135 &8312603193848631542
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916095762725810944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7916095762751744614
 GameObject:
   m_ObjectHideFlags: 0

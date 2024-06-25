@@ -15,4 +15,6 @@ MonoBehaviour:
   objectives:
   - reference: findstatue
     description: Get to the statue to know something.
-  rewards: []
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: fff52291f06ec4f418da0e518ad8871d, type: 2}

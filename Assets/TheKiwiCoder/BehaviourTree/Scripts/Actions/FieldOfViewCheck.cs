@@ -22,12 +22,13 @@ namespace TheKiwiCoder
         protected override State OnUpdate()
         {
             Vector3 toTarget = target.position - context.transform.position;
-            Debug.Log(Vector3.Angle(context.transform.forward, toTarget) < angle / 2);
+
             if (toTarget.sqrMagnitude < radius * radius)
             {
                 if (Vector3.Angle(context.transform.forward, toTarget) < angle / 2)
                 {
                     context.target = target;
+                    blackboard.moveToPosition = target.position;
                     return State.Success;
                 }
             }

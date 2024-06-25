@@ -1,28 +1,29 @@
-using RPG.Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
-public class LevelManager : MonoBehaviour
+namespace RPG.Enemy
 {
-    public UnityEvent OnEnemiesCleared;
-
-    [SerializeField] private List<Enemies> enemiesInLevel;
-
-    public void OnEnemySpawn(Enemies enemy)
+    public class LevelManager : MonoBehaviour
     {
-        enemiesInLevel.Add(enemy);
-    }
+        public UnityEvent OnEnemiesCleared;
 
+        [SerializeField] private List<Enemies> enemiesInLevel;
 
-    public void OnEnemyDeath(Enemies enemy)
-    {
-        enemiesInLevel.Remove(enemy);
-        if (enemiesInLevel.Count == 0)
+        public void OnEnemySpawn(Enemies enemy)
         {
-            OnEnemiesCleared.Invoke();
+            enemiesInLevel.Add(enemy);
         }
-    }
 
+
+        public void OnEnemyDeath(Enemies enemy)
+        {
+            enemiesInLevel.Remove(enemy);
+            if (enemiesInLevel.Count == 0)
+            {
+                OnEnemiesCleared.Invoke();
+            }
+        }
+
+    }
 }

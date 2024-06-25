@@ -68,7 +68,6 @@ namespace RPG.Enemy
             float damage = GetComponent<BaseStats>().GetStats(Stat.Damage);
             if (other.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Player Hit");
                 other.GetComponent<Attributes.Health>().TakeDamage(gameObject, damage);
             }
         }

@@ -28,7 +28,6 @@ namespace TheKiwiCoder
         {
             if (enemy.CheckCD(skillUsed)) return State.Failure;
             if (context.target == null) return State.Failure;
-            Debug.Log("Using Skill" + context.target);
             enemy.PlayAnimation("Skill 0" + index.ToString());
             enemy.UseSkill(context.target.position, index);
             return State.Success;

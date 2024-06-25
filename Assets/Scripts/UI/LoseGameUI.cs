@@ -11,6 +11,7 @@ public class LoseGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(restartButton);
         restartButton.onClick.AddListener(GameManager.instance.RestartGame);
         quitButton.onClick.AddListener(GameManager.instance.QuitGame);
         mainMenuButton.onClick.AddListener(GameManager.instance.MainMenu);

@@ -13,19 +13,32 @@ namespace Control
 {
     public class PlayerController : MonoBehaviour, IModifierProvider
     {
-        Animator animator;
-        BaseStats baseStats;
-        ActionStore actionStore;
-        SkillController skillController;
-        Slide slide;
-        float dmg;
-        bool attackMode = false;
+        #region private variables
+        Animator animator; // Kiểm soát các animation
+        BaseStats baseStats; // Chứa các thông số cơ bản của nhân vật
+        ActionStore actionStore; // Điều khiển việc sử dụng các vật phẩm
+        SkillController skillController; // Điều khiển sử dụng kĩ năng
+        Rigidbody rb; // Component quản lý vật lý của nhân vật
+        Slide slide; // Component gắn với vũ khí để xác định mục tiêu bị tấn công
+        float dmg; // Sát thương của nhân vật
+        bool attackMode = false; // Chế độ tấn công
+        private bool canAttack = true; // Có thể tấn công
+        List<Modifier> environmentModifier; // Danh sách các modifier từ môi trường ảnh hưởng đến nhân vật
+        bool canDash = true; // Có thể Dash
+        bool isDashing = false; // Đang Dash
+        Vignette vignette; // Hiệu ứng khi nhân vật bị tấn công
+        #endregion
 
-        List<Modifier> environmentModifier;
+        #region serialized fields
+        [SerializeField] float dashSpeed = 10f; // Tốc độ khi dash
+        [SerializeField] float dashTime = 0.5f; // Thời gian dash
 
-        private bool canAttack = true;
-        public bool CanAttack { get => canAttack; set => canAttack = value; }
+        [SerializeField] private CinemachineVirtualCamera battleCamera; // Camera trong chế độ tấn công
+        [SerializeField] private CinemachineFreeLook normalCamera; // Camera trong chế độ khám phá
+        [SerializeField] private Volume volume; // Volume chứa các hiệu ứng 
+        #endregion
 
+        public bool CanAttack { get => canAttack; set => canAttack = value; }        
         public void UpdateModifier(List<Modifier> modifiers)
         {
             environmentModifier.Clear();
@@ -34,18 +47,6 @@ namespace Control
                 environmentModifier.Add(modifier);
             }
         }
-
-
-        bool isDashing = false;
-        Rigidbody rb;
-        bool canDash = true;
-        [SerializeField] float dashSpeed = 10f;
-        [SerializeField] float dashTime = 0.5f;
-
-        [SerializeField] private CinemachineVirtualCamera battleCamera;
-        [SerializeField] private CinemachineFreeLook normalCamera;
-        [SerializeField] private Volume volume;
-        Vignette vignette;
 
         private void Awake()
         {
@@ -69,11 +70,11 @@ namespace Control
 
         private void Update()
         {
-            Debug.Log("Update");
+            if (Input.GetKeyDown(KeyCode.Z))
+                GetComponent<Health>().TakeDamage(gameObject, 10000);
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 attackMode = !attackMode;
-                Debug.Log(attackMode);
                 if (attackMode)
                 {
                     battleCamera.Priority = 20;
@@ -111,15 +112,12 @@ namespace Control
                 }
             }
 
-            Debug.Log("Skill");
-
             var firstSkill = KeyCode.F;
             var lastSkill = KeyCode.H;
             for (var i = firstSkill; i <= lastSkill; i++)
             {
                 if (Input.GetKeyDown(i))
                 {
-                    Debug.Log("Use skill");
                     skillController.Use(i - firstSkill, this);
                 }
             }
@@ -135,7 +133,6 @@ namespace Control
             }
             else
             {
-                Debug.Log(Vector3.Distance(Camera.main.transform.position, transform.position));
                 battleCamera.Priority = 10;
                 normalCamera.Priority = 20;
             }
@@ -223,7 +220,6 @@ namespace Control
         }
         public IEnumerator Damaged()
         {
-            Debug.Log(vignette);
             vignette.color.value = Color.red;
             vignette.intensity.value = 0.5f;
             yield return new WaitForSeconds(0.2f);

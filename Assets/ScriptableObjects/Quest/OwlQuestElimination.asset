@@ -15,4 +15,6 @@ MonoBehaviour:
   objectives:
   - reference: eliminate
     description: Eliminate all enemies.
-  rewards: []
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: b804afe2f5911ea4f997c32a4260cd93, type: 2}
