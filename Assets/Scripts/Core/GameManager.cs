@@ -1,11 +1,15 @@
+using RPG.SceneManagement;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] GameObject loseGameUI;
+    [SerializeField] private GameObject loadingScreen;
     public UnityEvent OnLose;
     private void Awake()
     {
@@ -28,6 +32,11 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ContinueGame()
+    {
+        FindObjectOfType<SavingWrapper>().ContinueGame();
     }
 
     public void RestartGame()
@@ -56,8 +65,23 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene(int index)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadSceneAsync(index));
+    }
+
+    private IEnumerator LoadSceneAsync(int index)
+    {
+        Debug.Log("Loading Scene: " + index);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+        GameObject screen = Instantiate(loadingScreen);
+        Image loadingFillBar = screen.GetComponentsInChildren<Image>()[1];
+        while (!asyncLoad.isDone)
+        {
+            float progress = Mathf.Clamp01(asyncLoad.progress / 0.9f);
+            loadingFillBar.fillAmount = progress;
+            yield return null;
+        }
+       Destroy(screen);
     }
 }

@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7425723125105720170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 3ecd8699-50b5-48ae-a694-df365ed3a85f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Save the game.
+  children:
+  - 297d273c-95b2-4ecb-98a1-182d0fef17e8
+  rect:
+    serializedVersion: 2
+    x: 456
+    y: 432.00003
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: savegame
 --- !u!114 &-3830075735862612104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,8 +44,8 @@ MonoBehaviour:
   - 297d273c-95b2-4ecb-98a1-182d0fef17e8
   rect:
     serializedVersion: 2
-    x: 283
-    y: 206.00003
+    x: 462
+    y: 210.00003
     width: 200
     height: 100
   condition:
@@ -44,8 +70,8 @@ MonoBehaviour:
   - 297d273c-95b2-4ecb-98a1-182d0fef17e8
   rect:
     serializedVersion: 2
-    x: 278
-    y: 307.00003
+    x: 460
+    y: 321.00003
     width: 200
     height: 100
   condition:
@@ -65,11 +91,13 @@ MonoBehaviour:
   m_Name: AncientArtifact
   m_EditorClassIdentifier: 
   nodes:
+  - {fileID: 634868952541888064}
   - {fileID: 1208167777410218301}
   - {fileID: 8507896610330151951}
   - {fileID: -3830075735862612104}
   - {fileID: -1876154002658689909}
   - {fileID: 634868952541888064}
+  - {fileID: -7425723125105720170}
 --- !u!114 &634868952541888064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,8 +115,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 558
-    y: 209.00002
+    x: 788
+    y: 297
     width: 200
     height: 100
   condition:
@@ -108,15 +136,16 @@ MonoBehaviour:
   m_Name: 74d1b683-a8fa-4a90-a48b-573dd3009af9
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Which weather would you change
+  text: Which do you want?
   children:
   - 6c289571-7b91-421b-bcad-cf77b12d9e0f
   - 9a458634-6d8a-4228-8da9-067d47a214b2
   - 965c4ae3-7919-41f4-91d9-47ad810fffa7
+  - 3ecd8699-50b5-48ae-a694-df365ed3a85f
   rect:
     serializedVersion: 2
-    x: 38
-    y: 203.00002
+    x: 133
+    y: 229.00002
     width: 200
     height: 100
   condition:
@@ -216,8 +245,8 @@ MonoBehaviour:
   - 297d273c-95b2-4ecb-98a1-182d0fef17e8
   rect:
     serializedVersion: 2
-    x: 287
-    y: 105.000015
+    x: 465
+    y: 94.000015
     width: 200
     height: 100
   condition:

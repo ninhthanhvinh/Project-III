@@ -44,6 +44,11 @@ namespace RPG.SceneManagement
             }
         }
 
+        public void ContinueGame()
+        {
+            StartCoroutine(LoadLastScene());
+        }
+
         public void Load()
         {
             GetComponent<SavingSystem>().Load(defaultSaveFile);

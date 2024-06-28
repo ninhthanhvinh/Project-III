@@ -5,15 +5,10 @@ using UnityEngine.AI;
 
 namespace RPG.Enemy
 {
-    public class Mage : Enemies, IAttackAgent
+    public class Mage : Enemy
     {
         [SerializeField] Animator anim;
 
-        [SerializeField] private float attackDistance;
-        [SerializeField] private float repeatAttackDelay;
-        [SerializeField] private float attackAngle;
-
-        protected float lastAttackTime;
 
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private Transform spawnPlace;
@@ -21,7 +16,6 @@ namespace RPG.Enemy
         NavMeshAgent navMeshAgent;
         private void Awake()
         {
-            lastAttackTime = -repeatAttackDelay;
             navMeshAgent = GetComponent<NavMeshAgent>();
             levelManager = FindObjectOfType<LevelManager>();
         }
@@ -48,7 +42,7 @@ namespace RPG.Enemy
                 anim.SetBool("isRunning", false);
             }
         }
-        public void Attack(Vector3 targetPosition)
+        public override void Attack(Vector3 targetPosition)
         {
             anim.SetTrigger("attack");
             Bullet bullet = Instantiate(bulletPrefab, spawnPlace.position, Quaternion.identity).GetComponent<Bullet>();
@@ -59,20 +53,6 @@ namespace RPG.Enemy
             lastAttackTime = Time.time;
         }
 
-        public float AttackAngle()
-        {
-            return attackAngle;
-        }
-
-        public float AttackDistance()
-        {
-            return attackDistance;
-        }
-
-        public bool CanAttack()
-        {
-            return lastAttackTime + repeatAttackDelay < Time.time;
-        }
     }    
     
 }

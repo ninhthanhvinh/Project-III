@@ -21,7 +21,7 @@ namespace Control
         Rigidbody rb; // Component quản lý vật lý của nhân vật
         Slide slide; // Component gắn với vũ khí để xác định mục tiêu bị tấn công
         float dmg; // Sát thương của nhân vật
-        bool attackMode = false; // Chế độ tấn công
+        public bool AttackMode { get; private set; } // Chế độ tấn công 
         private bool canAttack = true; // Có thể tấn công
         List<Modifier> environmentModifier; // Danh sách các modifier từ môi trường ảnh hưởng đến nhân vật
         bool canDash = true; // Có thể Dash
@@ -38,7 +38,7 @@ namespace Control
         [SerializeField] private Volume volume; // Volume chứa các hiệu ứng 
         #endregion
 
-        public bool CanAttack { get => canAttack; set => canAttack = value; }        
+        public bool CanAttack { get => canAttack; set => canAttack = value; }
         public void UpdateModifier(List<Modifier> modifiers)
         {
             environmentModifier.Clear();
@@ -74,8 +74,8 @@ namespace Control
                 GetComponent<Health>().TakeDamage(gameObject, 10000);
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                attackMode = !attackMode;
-                if (attackMode)
+                AttackMode = !AttackMode;
+                if (AttackMode)
                 {
                     battleCamera.Priority = 20;
                     normalCamera.Priority = 10;
@@ -87,7 +87,7 @@ namespace Control
                 }
             }    
 
-            if (!attackMode)
+            if (!AttackMode)
             {
                 return;
             }

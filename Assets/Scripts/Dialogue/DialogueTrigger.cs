@@ -14,6 +14,7 @@ namespace Dialogue
         {
             if (actionToTrigger == action)
             {
+                Debug.Log("Triggered: " + action);
                 onTrigger.Invoke();
             }
         }

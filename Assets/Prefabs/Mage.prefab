@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 5950629922714421621}
   - component: {fileID: 4636714660657203142}
   - component: {fileID: 7077850514130254568}
+  - component: {fileID: 3910033829315062664}
   m_Layer: 9
   m_Name: Mage
   m_TagString: Enemy
@@ -71,7 +72,7 @@ Transform:
   - {fileID: 9054977072188835068}
   - {fileID: 8280402865411204603}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6211696948766763461
 MeshFilter:
@@ -247,6 +248,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3910033829315062664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256821515005198198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: a2daed2e350ae214db8ad35c9133e6a2, type: 2}
 --- !u!1 &1909526311924549470
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d1ca117ac6759428f2cdf7ef72fddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleFactor: 50
   isScale: 1
 --- !u!1 &3400233465070455899
 GameObject:

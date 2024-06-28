@@ -7,6 +7,7 @@ using BehaviorDesigner.Runtime;
 using Control;
 using RPG.Enemy;
 using UnityEngine.Events;
+using TheKiwiCoder;
 
 namespace RPG.Attributes
 {
@@ -90,7 +91,7 @@ namespace RPG.Attributes
             if (!gameObject.CompareTag("Player"))
             {
 
-                GetComponent<BehaviorTree>().enabled = false;
+                GetComponent<BehaviourTreeRunner>().enabled = false;
                 
             }
             else 

@@ -1,3 +1,4 @@
+using Control;
 using RPG.Saving;
 using RPG.Stats;
 using System.Collections;
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour, ISaveable
 {
     float inputX, inputY;
 
+    PlayerController playerController;
 
     [Range(0.0f, 0.3f)]
     public float RotationSmoothTime = 0.12f;
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour, ISaveable
     void Start()
     {
         animator = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -43,17 +46,28 @@ public class PlayerMovement : MonoBehaviour, ISaveable
         if (inputDirection != Vector3.zero)
         {
             _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0.0f, _targetRotation, 0.0f);
+            if (playerController.AttackMode)
+                transform.rotation = Quaternion.Euler(0.0f, _targetRotation, 0.0f);
+            else
+            {
+                transform.rotation = Quaternion.Euler(0f, Camera.main.transform.eulerAngles.y, 0f);
+            }
 
             SoundManager.instance.PlaySound("run", transform);
 
-            Vector3 moveDir = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+            Vector3 moveDir = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * GetCameraFront();
             MoveSpeed = GetComponent<BaseStats>().GetStats(Stat.Speed);
 
-            transform.position += moveDir * MoveSpeed * Time.deltaTime;
+            transform.position += MoveSpeed * Time.deltaTime * moveDir;
         }
-
         animator.SetFloat("Speed", _speed);
+    }
+
+    public Vector3 GetCameraFront()
+    {
+        Vector3 fwd = Camera.main.transform.forward.normalized;
+        fwd = new Vector3(fwd.x, 0, fwd.z);
+        return fwd;
     }
 
 

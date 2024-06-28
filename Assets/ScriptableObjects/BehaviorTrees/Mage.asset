@@ -101,12 +101,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 80e771717e96cfc41a4735aeb587058f
-  position: {x: -169.79999, y: 156.6}
+  position: {x: -172.48001, y: 158}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  radius: 20
+  radius: 200
   angle: 360
 --- !u!114 &5674594187671616310
 MonoBehaviour:

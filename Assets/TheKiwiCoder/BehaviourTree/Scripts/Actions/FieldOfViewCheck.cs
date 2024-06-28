@@ -28,6 +28,7 @@ namespace TheKiwiCoder
                 if (Vector3.Angle(context.transform.forward, toTarget) < angle / 2)
                 {
                     context.target = target;
+                    Debug.Log(target.name);
                     blackboard.moveToPosition = target.position;
                     return State.Success;
                 }
