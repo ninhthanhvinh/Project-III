@@ -32,14 +32,15 @@ namespace RPG.Enemy
         {
             animator.Play("Attack");
             float dmg = GetComponent<BaseStats>().GetStats(Stat.Damage);
-            PerformNAttack(targetPosition, dmg);
+            StartCoroutine(PerformNAttack(targetPosition, dmg, 1.7f / 4));
         }
 
-        public void PerformNAttack(Vector3 target, float dmg)
+        public IEnumerator PerformNAttack(Vector3 target, float dmg, float timeDelay)
         {
+            yield return new WaitForSeconds(timeDelay);
             Bullet bullet = Instantiate(projectileNAttack, transform.position, Quaternion.identity).GetComponent<Bullet>();
             bullet.Direction = (target - transform.position).normalized;
-            bullet.Damage = 2 * dmg;
+            bullet.Damage = dmg;
         }
 
         private IEnumerator EndCD(Skill skill)

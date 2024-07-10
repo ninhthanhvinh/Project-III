@@ -54,7 +54,7 @@ namespace RPG.Quests
             return statuses;
         }
 
-        private QuestStatus GetQuestStatus(Quest quest)
+        public QuestStatus GetQuestStatus(Quest quest)
         {
             foreach (QuestStatus status in statuses)
             {

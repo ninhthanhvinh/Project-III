@@ -38,6 +38,8 @@ namespace Control
         [SerializeField] private Volume volume; // Volume chứa các hiệu ứng 
         #endregion
 
+        private static bool isCheated = false;
+
         public bool CanAttack { get => canAttack; set => canAttack = value; }
         public void UpdateModifier(List<Modifier> modifiers)
         {
@@ -70,8 +72,6 @@ namespace Control
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Z))
-                GetComponent<Health>().TakeDamage(gameObject, 10000);
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 AttackMode = !AttackMode;
@@ -85,7 +85,12 @@ namespace Control
                     battleCamera.Priority = 10;
                     normalCamera.Priority = 20;
                 }
-            }    
+            }
+
+            if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.Z))
+            {
+                Cheat();
+            }
 
             if (!AttackMode)
             {
@@ -121,6 +126,7 @@ namespace Control
                     skillController.Use(i - firstSkill, this);
                 }
             }
+
         }
 
         private void ChangeCameraMode(bool attackMode)
@@ -225,6 +231,16 @@ namespace Control
             yield return new WaitForSeconds(0.2f);
             vignette.intensity.value = 0.26f;
             vignette.color.value = Color.black;
+        }
+
+        private void Cheat()
+        {
+            if (!isCheated)
+            {
+                isCheated = true;
+                GetComponent<Experience>().GainExperience(250000f);
+                GetComponent<Health>().Heal(100000f);
+            }
         }
     }
 

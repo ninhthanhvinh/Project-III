@@ -3,10 +3,10 @@ using RPG.Saving;
 
 namespace RPG.Inventories
 {
-    /// <summary>
+
     /// Spawns pickups that should exist on first load in a level. This
     /// automatically spawns the correct prefab for a given inventory item.
-    /// </summary>
+
     public class PickupSpawner : MonoBehaviour, ISaveable
     {
         // CONFIG DATA
@@ -24,18 +24,17 @@ namespace RPG.Inventories
 
         // PUBLIC
 
-        /// <summary>
+    
         /// Returns the pickup spawned by this class if it exists.
-        /// </summary>
-        /// <returns>Returns null if the pickup has been collected.</returns>
+
         public Pickup GetPickup() 
         { 
             return GetComponentInChildren<Pickup>();
         }
 
-        /// <summary>
+    
         /// True if the pickup was collected.
-        /// </summary>
+    
         public bool isCollected() 
         { 
             return GetPickup() == null;

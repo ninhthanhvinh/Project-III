@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scaleFactor: 50
-  isScale: 0
+  isScale: 1
 --- !u!1 &7206127436010420387
 GameObject:
   m_ObjectHideFlags: 0

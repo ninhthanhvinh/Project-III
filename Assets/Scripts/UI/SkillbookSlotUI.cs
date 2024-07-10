@@ -1,6 +1,7 @@
 using RPG.Skills;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,7 @@ namespace RPG.UI
     public class SkillbookSlotUI : MonoBehaviour
     {
         [SerializeField] Image icon = null;
-        [SerializeField] Text skillName = null;
-        [SerializeField] Text skillDescription = null;
+        [SerializeField] TextMeshProUGUI skillName = null;
         [SerializeField] Skill skill = null;
         [SerializeField] SkillUI[] equipablePositions;
 
@@ -25,7 +25,6 @@ namespace RPG.UI
         {
             icon.sprite = skill.icon;
             skillName.text = skill.name;
-            skillDescription.text = skill.description;
             skillbook = GetComponentInParent<Skillbook>();
         }
 

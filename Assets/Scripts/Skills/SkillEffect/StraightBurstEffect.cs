@@ -1,6 +1,4 @@
 using RPG.Attributes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -11,7 +9,7 @@ namespace RPG.Skills
         [SerializeField] private LayerMask characterLayer;
         public override void Apply(GameObject owner, Skill skill)
         {
-            Collider[] colliders = Physics.OverlapBox(owner.transform.position, new Vector3(1f, 2f, skill.range), Quaternion.identity, characterLayer);
+            Collider[] colliders = Physics.OverlapBox(owner.transform.position, new Vector3(2 * skill.range, 4f, skill.range), owner.transform.rotation, characterLayer);
             foreach (Collider collider in colliders)
             {
                 if (collider.gameObject != owner)

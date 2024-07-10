@@ -29,6 +29,11 @@ namespace RPG.UI
 
         }
 
+        public void GoToMainMenu()
+        {
+            FindObjectOfType<GameManager>().LoadScene(0);
+        }
+
         public void ChangeMusicState(bool value)
         {
             if (value)

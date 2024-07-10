@@ -17,7 +17,6 @@ namespace RPG.Quests
             OnQuestAdd.Invoke();
             if (destination != null)
             {
-                Debug.Log("Drawing path to collectable");
                 destination.DrawPath();
             }
 

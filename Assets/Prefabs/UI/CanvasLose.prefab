@@ -247,11 +247,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3099325320514769682, guid: 764a7f652d22253499b42a26bdf6cc65,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 5099873377781675020}
     - target: {fileID: 4374606349016902972, guid: 764a7f652d22253499b42a26bdf6cc65,
         type: 3}
       propertyPath: m_Name
       value: LoseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5164249222596444108, guid: 764a7f652d22253499b42a26bdf6cc65,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 5099873377781675020}
     - target: {fileID: 5164249222596444109, guid: 764a7f652d22253499b42a26bdf6cc65,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -277,6 +287,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5099873377781675020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3713622636582698047, guid: 764a7f652d22253499b42a26bdf6cc65,
+    type: 3}
+  m_PrefabInstance: {fileID: 8452996800435554355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &5841427350269904530 stripped

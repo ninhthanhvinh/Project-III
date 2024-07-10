@@ -29,7 +29,7 @@ namespace RPG.Quests
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!questList.HasQuest(quest)) return;
+            if (!questList.HasQuest(quest) || questList.GetQuestStatus(quest).IsObjectiveComplete(objective)) return;
             if (other.CompareTag("Player") )
                 CompleteObjective();
         }

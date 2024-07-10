@@ -2,10 +2,10 @@
 
 namespace RPG.Inventories
 {
-    /// <summary>
+    
     /// To be placed at the root of a Pickup prefab. Contains the data about the
     /// pickup such as the type of item and the number.
-    /// </summary>
+    
     public class Pickup : MonoBehaviour
     {
         // STATE
@@ -25,10 +25,9 @@ namespace RPG.Inventories
 
         // PUBLIC
 
-        /// <summary>
+        
         /// Set the vital data after creating the prefab.
-        /// </summary>
-        /// <param name="item">The type of item this prefab represents.</param>
+        
         public void Setup(InventoryItem item, int number)
         {
             this.item = item;

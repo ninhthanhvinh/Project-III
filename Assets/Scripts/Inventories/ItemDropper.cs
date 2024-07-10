@@ -4,21 +4,13 @@ using RPG.Saving;
 
 namespace RPG.Inventories
 {
-    /// <summary>
-    /// To be placed on anything that wishes to drop pickups into the world.
-    /// Tracks the drops for saving and restoring.
-    /// </summary>
+
     public class ItemDropper : MonoBehaviour, ISaveable
     {
         // STATE
         private List<Pickup> droppedItems = new List<Pickup>();
 
         // PUBLIC
-
-        /// <summary>
-        /// Create a pickup at the current position.
-        /// </summary>
-        /// <param name="item">The item type for the pickup.</param>
         public void DropItem(InventoryItem item, int number)
         {
             SpawnPickup(item, number, GetDropLocation());
@@ -26,10 +18,6 @@ namespace RPG.Inventories
 
         // PROTECTED
 
-        /// <summary>
-        /// Override to set a custom method for locating a drop.
-        /// </summary>
-        /// <returns>The location the drop should be spawned.</returns>
         protected virtual Vector3 GetDropLocation()
         {
             return transform.position + new Vector3(3f, 1f, 0f);
@@ -75,10 +63,7 @@ namespace RPG.Inventories
                 SpawnPickup(pickupItem, number, position);
             }
         }
-
-        /// <summary>
-        /// Remove any drops in the world that have subsequently been picked up.
-        /// </summary>
+=
         private void RemoveDestroyedDrops()
         {
             var newList = new List<Pickup>();

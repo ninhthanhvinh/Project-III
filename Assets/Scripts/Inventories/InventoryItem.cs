@@ -4,14 +4,10 @@ using UnityEngine;
 
 namespace RPG.Inventories
 {
-    /// <summary>
+    
     /// A ScriptableObject that represents any item that can be put in an
     /// inventory.
-    /// </summary>
-    /// <remarks>
-    /// In practice, you are likely to use a subclass such as `ActionItem` or
-    /// `EquipableItem`.
-    /// </remarks>
+
     public abstract class InventoryItem : ScriptableObject, ISerializationCallbackReceiver    {
         // CONFIG DATA
         [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one.")]
@@ -32,15 +28,10 @@ namespace RPG.Inventories
 
         // PUBLIC
 
-        /// <summary>
+        
         /// Get the inventory item instance from its UUID.
-        /// </summary>
-        /// <param name="itemID">
-        /// String UUID that persists between game instances.
-        /// </param>
-        /// <returns>
         /// Inventory item instance corresponding to the ID.
-        /// </returns>
+        
         public static InventoryItem GetFromID(string itemID)
         {
             if (itemLookupCache == null)
@@ -63,11 +54,9 @@ namespace RPG.Inventories
             return itemLookupCache[itemID];
         }
 
-        /// <summary>
+        
         /// Spawn the pickup gameobject into the world.
-        /// </summary>
-        /// <param name="position">Where to spawn the pickup.</param>
-        /// <returns>Reference to the pickup object spawned.</returns>
+       
         public Pickup SpawnPickup(Vector3 position, int number)
         {
             var pickup = Instantiate(this.pickup);

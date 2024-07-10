@@ -14,7 +14,7 @@ public class MoveToPosition : ActionNode
     protected override void OnStart() {
         context.agent.stoppingDistance = stoppingDistance;
         context.agent.speed = speed;
-        context.agent.destination = blackboard.moveToPosition;
+        context.agent.destination = blackboard.moveToPosition.position;
         context.agent.updateRotation = updateRotation;
         context.agent.acceleration = acceleration;
     }
@@ -23,15 +23,24 @@ public class MoveToPosition : ActionNode
     }
 
     protected override State OnUpdate() {
+
+        context.agent.destination = blackboard.moveToPosition.position;
+
         if (context.agent.pathPending) {
+            if (context.animator != null)
+                context.animator.SetFloat("speed", 1f);
             return State.Running;
         }
 
         if (context.agent.remainingDistance < tolerance) {
+            if (context.animator != null)
+                context.animator.SetFloat("speed", 0f);
             return State.Success;
         }
 
         if (context.agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathInvalid) {
+            if (context.animator != null)
+                context.animator.SetFloat("speed", 0f);
             return State.Failure;
         }
 

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6839282229923769640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: c71bd983-9647-41ff-9792-80a7a1c3fa40
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Say, who are you? Where are the others?
+  children:
+  - b05275ed-6f9b-4780-bcd9-7bbdd679e205
+  rect:
+    serializedVersion: 2
+    x: -8
+    y: 118
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95968f1e506f8d340839f768b3f3c32b, type: 3}
+  m_Name: Lavaman in NPC
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -6839282229923769640}
+  - {fileID: 2059569413582387645}
+  - {fileID: 6681109598944281103}
+--- !u!114 &2059569413582387645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: b05275ed-6f9b-4780-bcd9-7bbdd679e205
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'You don''t need to know. '
+  children:
+  - 8f3af968-01b7-4b5a-b44b-6bf169c81463
+  rect:
+    serializedVersion: 2
+    x: 242
+    y: 118
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &6681109598944281103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: 8f3af968-01b7-4b5a-b44b-6bf169c81463
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: I am the guardian of this land.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 492
+    y: 118
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: bossreveal

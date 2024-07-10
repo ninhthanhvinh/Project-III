@@ -17,8 +17,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 1050
-    y: 74
+    x: 1301
+    y: 86
     width: 200
     height: 100
   condition:
@@ -40,11 +40,37 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   text: Why does everything turn into blood color?
   children:
+  - acfbc70b-d0c7-4dd9-84e7-42806256e36d
+  rect:
+    serializedVersion: 2
+    x: 282
+    y: 178
+    width: 200
+    height: 100
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-7182634784020416521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c213be63185c5b449740c692cffd79e, type: 3}
+  m_Name: acfbc70b-d0c7-4dd9-84e7-42806256e36d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I only see you. Where are the others?
+  children:
   - 1e806a69-41a4-45f6-8422-b2d94f16e30a
   rect:
     serializedVersion: 2
-    x: 290
-    y: 181
+    x: 520
+    y: 178
     width: 200
     height: 100
   condition:
@@ -98,6 +124,7 @@ MonoBehaviour:
   - {fileID: -8715775557487827144}
   - {fileID: 8912439475324025117}
   - {fileID: 8933465230437747510}
+  - {fileID: -7182634784020416521}
 --- !u!114 &401392799521757223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,8 +144,8 @@ MonoBehaviour:
   - f072abdd-6c33-4acf-9109-82849845753a
   rect:
     serializedVersion: 2
-    x: 543
-    y: 177
+    x: 782
+    y: 175
     width: 200
     height: 100
   condition:
@@ -143,8 +170,8 @@ MonoBehaviour:
   - bdd327ef-b141-4367-a3a4-f7a31969ec46
   rect:
     serializedVersion: 2
-    x: 800
-    y: 74
+    x: 1038
+    y: 80
     width: 200
     height: 100
   condition:
@@ -169,8 +196,8 @@ MonoBehaviour:
   - 0c7ca63f-7b31-47c8-9f98-ff45a01308b8
   rect:
     serializedVersion: 2
-    x: 800
-    y: 269
+    x: 1029
+    y: 278
     width: 200
     height: 100
   condition:
@@ -195,8 +222,8 @@ MonoBehaviour:
   - 8ec6a60d-758e-458c-a851-66d7da80d8cc
   rect:
     serializedVersion: 2
-    x: 1050
-    y: 269
+    x: 1300
+    y: 276
     width: 200
     height: 100
   condition:
@@ -220,8 +247,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 1300
-    y: 269
+    x: 1604
+    y: 273
     width: 200
     height: 100
   condition:

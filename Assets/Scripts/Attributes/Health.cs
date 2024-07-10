@@ -8,6 +8,7 @@ using Control;
 using RPG.Enemy;
 using UnityEngine.Events;
 using TheKiwiCoder;
+using UnityEngine.AI;
 
 namespace RPG.Attributes
 {
@@ -90,9 +91,8 @@ namespace RPG.Attributes
             //GameManager.instance.GetComponent<EnemySpawner>().RemoveEnemy(gameObject);
             if (!gameObject.CompareTag("Player"))
             {
-
+                GetComponent<NavMeshAgent>().isStopped = true;
                 GetComponent<BehaviourTreeRunner>().enabled = false;
-                
             }
             else 
             {

@@ -11,7 +11,9 @@ public class Skillbook : MonoBehaviour
     {
         foreach (SkillbookSlotUI slot in skillbookSlots)
         {
-            if (slot.Skill.Equals(skill))
+            Debug.Log(slot);
+            if (slot != null &&
+                slot.Skill.Equals(skill))
             {
                 slot.IsEquipped = false;
                 return;

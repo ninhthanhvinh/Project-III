@@ -24,6 +24,7 @@ namespace RPG.UI
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
             nextButton.onClick.AddListener(() => playerConversant.Next());
             quitButton.onClick.AddListener(() => playerConversant.Quit());
+            quitButton.onClick.AddListener(() => Cursor.visible = false);
             playerConversant.OnConversationUpdated += UpdateUI;
             UpdateUI();
         }
@@ -31,7 +32,16 @@ namespace RPG.UI
         // Update is called once per frame
         void Update()
         {
+            if (gameObject.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+            {
+                playerConversant.Quit();
+            }
 
+            if (gameObject.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         void UpdateUI()

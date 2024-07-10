@@ -67,7 +67,7 @@ MonoBehaviour:
   condition:
     and: []
   onEnterAction: 
-  onExitAction: 
+  onExitAction: findthestatue
 --- !u!114 &5190841768577343661
 MonoBehaviour:
   m_ObjectHideFlags: 0

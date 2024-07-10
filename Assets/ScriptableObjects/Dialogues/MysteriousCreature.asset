@@ -39,13 +39,13 @@ MonoBehaviour:
   m_Name: deae898b-fd86-4522-8253-a34f176fd5d7
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: In your mind. You've just waken up.
+  text: Somewhere in the North. You've just waken up.
   children:
   - 2c5254c8-1572-44d3-ad66-ffc374771178
   rect:
     serializedVersion: 2
-    x: 273
-    y: 163
+    x: 261
+    y: 173
     width: 200
     height: 100
   condition:
@@ -95,14 +95,14 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 1504
+    x: 1506
     y: 122
     width: 200
     height: 100
   condition:
     and: []
   onEnterAction: 
-  onExitAction: nextScene
+  onExitAction: start
 --- !u!114 &-3479484035766085647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,13 +116,13 @@ MonoBehaviour:
   m_Name: 6ba896f5-4e3b-4786-b011-911130aa9386
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Now let's go to the furthest land of this world.
+  text: Now let's talk to someone here.
   children:
   - 87bf1e54-526c-4de2-b1df-7a792d878f25
   rect:
     serializedVersion: 2
-    x: 1254
-    y: 123
+    x: 1258
+    y: 129
     width: 200
     height: 100
   condition:

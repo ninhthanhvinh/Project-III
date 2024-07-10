@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,11 @@ public class EnvironmentRunner : MonoBehaviour
     private GameObject player;
     private int weatherIndex;
 
+    float count;
+
     public UnityEvent<List<Modifier>> OnWeatherChange;
+    private float updateWeatherDuration = 20f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,6 +43,29 @@ public class EnvironmentRunner : MonoBehaviour
     void Update()
     {
         currentWeather?.OnWeatherUpdate();
+        if (count > updateWeatherDuration)
+        {
+            UpdateWeather();
+            count = 0;
+        }
+        count += Time.deltaTime;
+    }
+
+    private void UpdateWeather()
+    {
+        WeatherPrefabs prefab = FindObjectOfType<WeatherPrefabs>();
+        if (prefab != null)
+        {
+            prefab.gameObject.transform.position = player.transform.position
+                + new Vector3(0f, 20f, 0f);
+            if (currentWeather.Effects != null)
+            {
+                foreach (var effect in currentWeather.Effects)
+                {
+                    effect.ExecuteEffect(player);
+                }
+            }
+        }
     }
 
     public void ChangeWeather(WeatherConfigs newWeather)
@@ -51,7 +79,7 @@ public class EnvironmentRunner : MonoBehaviour
             }
 
         currentWeather = newWeather;
-        
+        updateWeatherDuration = currentWeather.Duration;
         //Add new weather modifiers
         foreach (var modifier in currentWeather.Modifiers)
         {

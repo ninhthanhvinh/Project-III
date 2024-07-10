@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5052a10e1e731f74e9a9e155222ee6aa, type: 3}
   m_Name: Snow
   m_EditorClassIdentifier: 
-  duration: 10
+  duration: 20
   modifiers:
   - stat: 1
     value: -2

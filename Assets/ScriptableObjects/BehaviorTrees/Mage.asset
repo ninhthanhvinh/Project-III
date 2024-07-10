@@ -17,7 +17,7 @@ MonoBehaviour:
   guid: e2a50d7e6db322846b10b5ae635a8a02
   position: {x: -58, y: -205.528}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToPosition: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -6797307711452556823}
@@ -38,7 +38,7 @@ MonoBehaviour:
   guid: c61fece7a5fb6cb49835a60bc2773624
   position: {x: -57.799988, y: -116}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToPosition: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 5674594187671616310}
@@ -64,8 +64,9 @@ MonoBehaviour:
   - {fileID: 5553995187991196911}
   - {fileID: 5674594187671616310}
   - {fileID: 186860507433708539}
+  - {fileID: 6511243007494510869}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToPosition: {fileID: 0}
 --- !u!114 &186860507433708539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,9 +82,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f1e606675d0ae5f4dbd801f5d3c22317
-  position: {x: 53, y: 149.784}
+  position: {x: 189.79999, y: 149.6}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToPosition: {fileID: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &5553995187991196911
@@ -101,9 +102,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 80e771717e96cfc41a4735aeb587058f
-  position: {x: -172.48001, y: 158}
+  position: {x: -279, y: 149.6}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToPosition: {fileID: 0}
   description: 
   drawGizmos: 0
   radius: 200
@@ -125,9 +126,35 @@ MonoBehaviour:
   guid: 40f62fb136a366f4aa8ea8ae5ec6e13f
   position: {x: -58, y: 2.399994}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToPosition: {fileID: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 5553995187991196911}
+  - {fileID: 6511243007494510869}
   - {fileID: 186860507433708539}
+--- !u!114 &6511243007494510869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4489e3e257543504c8fc9f891246af6c, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b89dc3126101de840b9bbebce0f6731f
+  position: {x: -57.599976, y: 149.6}
+  blackboard:
+    moveToPosition: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  speed: 5
+  stoppingDistance: 6
+  updateRotation: 1
+  acceleration: 40
+  tolerance: 6.5

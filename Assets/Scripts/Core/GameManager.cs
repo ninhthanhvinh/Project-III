@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        FindObjectOfType<SavingWrapper>().Delete();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -74,6 +75,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Loading Scene: " + index);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+        
+
         GameObject screen = Instantiate(loadingScreen);
         Image loadingFillBar = screen.GetComponentsInChildren<Image>()[1];
         while (!asyncLoad.isDone)

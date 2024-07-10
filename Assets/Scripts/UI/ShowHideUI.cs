@@ -23,6 +23,7 @@ namespace InventoryExample.UI
         void Start()
         {
             uiContainer.SetActive(false);
+            Cursor.visible = false;
         }
 
         // Update is called once per frame
@@ -32,11 +33,24 @@ namespace InventoryExample.UI
             {
                 Toggle();
             }
+            if (Input.GetKeyDown(KeyCode.Escape) && uiContainer.activeSelf)
+            {
+                Toggle();
+            }
         }
 
         public void Toggle()
         {
             uiContainer.SetActive(!uiContainer.activeSelf);
+            if(uiContainer.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.visible = false;
+            }
             player.CanAttack = !uiContainer.activeSelf;
         }
     }

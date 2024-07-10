@@ -21,7 +21,7 @@ MonoBehaviour:
   allowedEquipLocation: 5
   additiveModifiers:
   - stat: 5
-    value: 50
+    value: 500
   - stat: 1
     value: -1
   percentageModifiers: []
