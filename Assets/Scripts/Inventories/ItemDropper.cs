@@ -63,7 +63,7 @@ namespace RPG.Inventories
                 SpawnPickup(pickupItem, number, position);
             }
         }
-=
+
         private void RemoveDestroyedDrops()
         {
             var newList = new List<Pickup>();
