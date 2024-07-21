@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ff70bec3376a1042bfffe64ed15db4d, type: 3}
-  m_Name: OTEffectConfig
+  m_Script: {fileID: 11500000, guid: 6781ea6b56e18b341a306ec2825d8e6b, type: 3}
+  m_Name: ChangeToSun
   m_EditorClassIdentifier: 
   statAffected: 0
-  value: -50
-  duration: 5
+  value: 0
+  weather: {fileID: 11400000, guid: b048e0de1332c02479de71487497b267, type: 2}
+  duration: 20

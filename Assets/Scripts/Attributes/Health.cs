@@ -22,7 +22,10 @@ namespace RPG.Attributes
         const float DEFENCE_AFFECT_ON_DAMAGE = 0.25f;
 
         public UnityEvent OnDead;
-
+#if UNITY_EDITOR
+        float timer = 0f;
+        [SerializeField] float healthRegentPerSecond = 0f;
+#endif
         private void Awake()
         {
             healthPoints = new LazyValue<float>(GetInitialHealth);
@@ -54,6 +57,17 @@ namespace RPG.Attributes
         private void OnDisable()
         {
             GetComponent<BaseStats>().onLevelUp -= RegenHealth;
+        }
+
+        private void Update() {
+#if UNITY_EDITOR
+            if (timer > 1f && healthPoints.value < GetComponent<BaseStats>().GetStats(Stat.Health) && healthRegentPerSecond > 0f)
+            {
+                Heal(healthRegentPerSecond);
+                timer = 0f;
+            }
+            timer += Time.deltaTime;
+#endif
         }
 
         public bool IsDead()

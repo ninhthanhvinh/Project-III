@@ -48,7 +48,7 @@ namespace RPG.Skills
             {
                 if (weatherAffection.weather == currentWeather)
                 {
-                    return ownerDamage + damage + damage * weatherAffection.damagePercentage;
+                    return ownerDamage + damage + damage * weatherAffection.damagePercentage / 100;
                 }
             }
             return damage + ownerDamage;

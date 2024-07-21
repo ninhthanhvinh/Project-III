@@ -18,7 +18,7 @@ MonoBehaviour:
   skillVFX: {fileID: 1879327735424490980, guid: 96c30f207bdbb3243abb88e8d5255d1e,
     type: 3}
   icon: {fileID: 21300000, guid: c91328049ccd4c24aa03fa83dd3a1813, type: 3}
-  cooldown: 10
+  cooldown: 3
   range: 3
   damage: 50
   description: 
@@ -38,3 +38,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   typeOfSkill: 0
+  weatherAffections:
+  - weather: {fileID: 11400000, guid: b048e0de1332c02479de71487497b267, type: 2}
+    damagePercentage: 50
+  - weather: {fileID: 11400000, guid: 170784719ae1c5041b08b81635b3265d, type: 2}
+    damagePercentage: -20
+  - weather: {fileID: 11400000, guid: 53c74ebf9905e2949ad5c51b7eacc683, type: 2}
+    damagePercentage: -10

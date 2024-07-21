@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ebdb32be32a1e0438010f243bcb5e14, type: 3}
-  m_Name: Glove
+  m_Script: {fileID: 11500000, guid: be8358f0fcfcb22418d7b5d788e02cc4, type: 3}
+  m_Name: ThorHammer
   m_EditorClassIdentifier: 
-  itemID: d501e668-8b22-4b61-9d6c-4761638e6535
+  itemID: 52dd920f-cbfa-4f9a-920f-2a2be8cecf22
   displayName: 
   description: 
-  icon: {fileID: 21300000, guid: f8078c2bb5ee88d4a9472f76e501e0f3, type: 3}
+  icon: {fileID: 0}
   pickup: {fileID: 0}
   stackable: 0
-  allowedEquipLocation: 7
+  consumable: 0
+  effects: []
